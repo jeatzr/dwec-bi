@@ -1,0 +1,1033 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02_js_fundamentals/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>U1 - Introduction to Frontend Tools - DWEC Bilingual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit1-introduction-to-frontend-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DWEC Bilingual" class="md-header__button md-logo" aria-label="DWEC Bilingual" data-md-component="logo">
+      
+  <img src="/01_frontend_introduction/img/JSEvol.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DWEC Bilingual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U1 - Introduction to Frontend Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DWEC Bilingual" class="md-nav__button md-logo" aria-label="DWEC Bilingual" data-md-component="logo">
+      
+  <img src="/01_frontend_introduction/img/JSEvol.png" alt="logo">
+
+    </a>
+    DWEC Bilingual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    U1 - Introduction to Frontend Tools
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    U1 - Introduction to Frontend Tools
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-difference-between-the-internet-and-the-www" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Difference Between the Internet and the WWW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Web Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-frontend-and-backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Frontend and Backend development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Frontend and Backend development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Backend Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-frontend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Frontend Development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-javascript-languaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Javascript Languaje
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Javascript Languaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-js-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 JS versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 TypeScript
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tools-for-frontend-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tools for frontend web development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tools for frontend web development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-text-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Text editors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-web-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Web browsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-version-control-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Version control tools****
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-package-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Package Managers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-linters-transpilers-and-bundlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Linters, Transpilers, and Bundlers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-libraries-and-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Libraries and Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-include-javascript-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Include JavaScript code.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_js_fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U2 - JS Fundamentals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-difference-between-the-internet-and-the-www" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Difference Between the Internet and the WWW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Web Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-frontend-and-backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Frontend and Backend development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Frontend and Backend development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Backend Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-frontend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Frontend Development
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-javascript-languaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Javascript Languaje
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Javascript Languaje">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-js-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 JS versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 TypeScript
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tools-for-frontend-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tools for frontend web development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tools for frontend web development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-text-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Text editors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-web-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Web browsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-version-control-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Version control tools****
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-package-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Package Managers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-linters-transpilers-and-bundlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Linters, Transpilers, and Bundlers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-libraries-and-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Libraries and Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-include-javascript-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Include JavaScript code.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="unit1-introduction-to-frontend-tools"><strong>UNIT1 - Introduction to Frontend Tools</strong></h1>
+<h2 id="1-difference-between-the-internet-and-the-www"><strong>1. Difference Between the Internet and the WWW</strong></h2>
+<h4 id="the-internet-the-www">The Internet === The WWW ??</h4>
+<p><img alt="Internet vs the WEB" src="img/00_internet_www.jpg" /></p>
+<h4 id="the-internet">The Internet:</h4>
+<ul>
+<li><strong>Definition</strong>: The Internet is a global network of interconnected computers and other devices. It is the infrastructure that enables various types of digital communication and data exchange.</li>
+<li><strong>History</strong>: The development of the Internet began in the late 1960s with the creation of ARPANET, a project funded by the U.S. Department of Defense. Over the following decades, it evolved into a global network with the adoption of TCP/IP protocols in the 1980s.</li>
+<li><strong>Components</strong>: The Internet consists of hardware (servers, routers, cables) and dertain standards and protocols (TCP/IP, Ethernet).</li>
+<li><strong>Functions</strong>: It supports a wide range of services such as email, file transfer, instant messaging, and, of course, the World Wide Web.</li>
+<li><strong>Analogy</strong>: Think of the Internet as the physical network of roads and highways.</li>
+</ul>
+<h4 id="the-world-wide-web-www">The World Wide Web (WWW):</h4>
+<ul>
+<li><strong>Definition</strong>: The World Wide Web is a collection of information, accessible via the Internet, which is formatted and interlinked using hypertext and hypermedia. It is a service that operates on the Internet.
+<strong>History</strong>: The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN. He developed the first web browser and web server, and the first website went live in 1991. The WWW rapidly grew in popularity throughout the 1990s, becoming a major part of everyday life.</li>
+<li><strong>Components</strong>: The WWW consists of web pages, websites, and web browsers. Web pages are documents written in HTML and accessed through URLs.</li>
+<li>
+<p><strong>Functions</strong>: It allows users to access and navigate web pages through web browsers (like Chrome, Firefox, Safari). These pages can contain text, images, videos, and links to other </p>
+</li>
+<li>
+<p><strong>Analogy</strong>: Think of the WWW as a specific system of paths and landmarks (websites and web pages) that exist on the physical roads and highways (the Internet).</p>
+</li>
+</ul>
+<h4 id="summary">Summary:</h4>
+<ul>
+<li><strong>Internet</strong>: The underlying global network connecting millions of computers.</li>
+<li><strong>WWW</strong>: A subset of the Internet, consisting of web pages and sites, accessed through web browsers.</li>
+</ul>
+<p>The WWW relies on the Internet to function, but the Internet also supports many other services beyond the Web.</p>
+<h2 id="2-web-architecture"><strong>2. Web Architecture</strong></h2>
+<p>The most common architecture is client/server. 
+ - A <strong>client</strong> is a service consumer. The web browser on our device acts as a client. 
+ - A <strong>server</strong> is one or more processes hosted on machines that provide these services."</p>
+<p><img alt="Client/server Architecture" src="img/01_web_architecture.png" /></p>
+<h2 id="3-frontend-and-backend-development"><strong>3. Frontend and Backend development</strong></h2>
+<ul>
+<li><strong>Backend</strong>: The part of the web application that runs on the server.</li>
+<li><strong>Frontend</strong>: The part of the web application that runs on the client.</li>
+</ul>
+<p><img alt="Backend and Frontend" src="img/03_back_front.png" /></p>
+<h3 id="31-backend-development"><strong>3.1 Backend Development</strong></h3>
+<p>It's the development carried out on the server side. It's responsible for the business logic and data persistence (storage in the database).</p>
+<p>Backend languajes:</p>
+<ul>
+<li>Java</li>
+<li>Python</li>
+<li>Node.js</li>
+<li>Ruby</li>
+<li>PHP</li>
+<li>ASP.NET</li>
+</ul>
+<p><img alt="Backend Languajes" src="img/04_backend_languajes.png" /></p>
+<h3 id="32-frontend-development"><strong>3.2 Frontend Development</strong></h3>
+<p>It's the part developed to run on the client (web browser). The web browser only knows how to interpret three languages:</p>
+<ul>
+<li><strong>HTML</strong>: For the structure and content of the page</li>
+<li><strong>CSS</strong>: Defines the appearance of the web page.</li>
+<li><strong>JavaScript</strong>: Language that defines dynamic behavior.</li>
+</ul>
+<p><img alt="Frontend Languajes" src="img/05_frontend_languajes.png" /></p>
+<p>Currently, it is gaining a lot of prominence due to the increased weight of web applications on the client side -&gt; Single-page application (SPAs).</p>
+<p>A <strong>single-page application (SPA)</strong> is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages. The goal is faster transitions that make the website feel more like a native app. (Source: <a href="https://en.wikipedia.org/wiki/Single-page_application">Wikipedia</a>)</p>
+<p>We can write the logic of our page in Vanilla JS. But the complexity of projects has made it necessary for various JavaScript frameworks and libraries to appear:</p>
+<ul>
+<li>Angular</li>
+<li>React</li>
+<li>Vue</li>
+<li>Svelte</li>
+<li>Many more and many more to come.</li>
+</ul>
+<p><img alt="Frontend Frameworks" src="img/06_frontend_frameworks.png" /></p>
+<h2 id="4-javascript-languaje"><strong>4. Javascript Languaje</strong></h2>
+<p>JS is an <strong>interpreted</strong> languaje defined as:</p>
+<ul>
+<li>
+<p><strong>Object oriented</strong>: JavaScript uses objects to organize and structure code, associating properties and methods with data.</p>
+</li>
+<li>
+<p><strong>Imperative</strong>: JavaScript executes statements sequentially to perform tasks, focusing on how to achieve results step by step.</p>
+</li>
+<li>
+<p><strong>Prototype-based</strong>: Instead of classes, JavaScript uses prototypes as templates for creating objects, allowing objects to inherit properties and methods directly from other objects.</p>
+</li>
+<li>
+<p><strong>Weakly typed</strong>: JavaScript allows flexible variable types, where variables can change types during execution without explicit declarations.</p>
+</li>
+<li>
+<p><strong>Dynamically typed</strong>: Types are determined at runtime in JavaScript, enabling variables to hold different types of values as the program runs, which enhances flexibility but requires careful handling to avoid unexpected behavior.</p>
+</li>
+</ul>
+<p>It is primarily used on the <strong>client side</strong>, implemented as part of the web browser to enhance the web interface and provide dynamic behavior.</p>
+<p>It can be used also in the <strong>server side</strong> with <strong>node.js</strong> to create the backend and many other applications.</p>
+<p><strong>REMINDER</strong></p>
+<blockquote>
+<ul>
+<li><strong>Compiled Languajes</strong>: A compiled language is a programming language where source code is translated entirely into machine code before execution, typically resulting in faster performance but requiring specific compilation for different platforms. Examples include C, C++, and Rust.</li>
+<li><strong>Interpreted Languajes</strong>: An interpreted language is a programming language where <strong>the code is executed line by line by an interpreter</strong>, translating each instruction to machine code one at a time during runtime. This approach enhances portability across different systems but typically results in slower performance compared to compiled languages. Examples include Python, JavaScript, and Ruby.</li>
+</ul>
+</blockquote>
+<h3 id="41-js-versions"><strong>4.1 JS versions</strong></h3>
+<p>JS is a dialect of <strong>ECMAScript</strong> and is defined by that standard. </p>
+<p><strong>History</strong>:</p>
+<ul>
+<li>It was created by Brendan Eich for Netscape in <strong>1995</strong>, initially called <strong>LiveScript</strong> before being renamed JavaScript. </li>
+<li>In <strong>1997</strong>, ECMA created the <strong>first ECMAScript standard</strong>. </li>
+<li><strong>ECMAScript 5</strong>, ES5, released in <strong>2009</strong>, introduced many improvements and remained a standard for many years. </li>
+<li><strong>ECMAScript 6</strong>, also known as ES6, released in <strong>2015</strong>, introduced major enhancements such as the use of classes and modules. It is the most widely supported version by all current browsers.</li>
+<li>Since ES6, a new version has been released every year. For example, the version for 2023 is ECMAScript 14. We can check <a href="https://en.wikipedia.org/wiki/ECMAScript_version_history">ESCMAScript version history</a> on Wikipedia or the <a href="https://ecma-international.org/publications-and-standards/standards/">official site of ECMA</a> to check the most releases of ECMAScript.</li>
+</ul>
+<p><img alt="hystory" src="img/js_history.png" /></p>
+<p>Image source: <a href="https://www.coursereport.com/blog/history-of-javascript">Gabriel Lebec @ Course Report</a></p>
+<h3 id="42-typescript"><strong>4.2 TypeScript</strong></h3>
+<p><a href="https://www.typescriptlang.org/">TypeScript</a> is a statically typed superset of JavaScript that compiles to plain JavaScript. It is developed and maintained by Microsoft. TypeScript adds optional static types, classes, and interfaces to JavaScript, providing a robust development experience for building large-scale applications.</p>
+<p><img alt="typescript" src="img/typescript.png" /></p>
+<h2 id="5-tools-for-frontend-web-development"><strong>5. Tools for frontend web development</strong></h2>
+<h3 id="51-text-editors"><strong>5.1 Text editors</strong></h3>
+<p>The most important tool to code will be a good text editor. </p>
+<p>We can find several options in the market, from the old and reliable (but simple) Notepad++ to the very powerful VS Code.</p>
+<ul>
+<li>Notepad++</li>
+<li>Sublime Text</li>
+<li>Atom</li>
+<li>VS Code</li>
+</ul>
+<p><img alt="text editorss" src="img/07_text_editors.png" /></p>
+<p>We will use the most extended nowadays: <a href="https://code.visualstudio.com/">VSCode</a>. This powerful and handy editor from Microsoft has a lot of desiderable features as:</p>
+<ul>
+<li>Syntax highlighting</li>
+<li>Multiplatform: For Windows, macOS and Linux</li>
+<li>Support for debugging</li>
+<li>Built-in Git control and integration with GitHub</li>
+<li>Integration with GitHub Copylot. </li>
+<li>"Snippets" or reusable pieces of code</li>
+<li>A multitude of installable extensions</li>
+</ul>
+<p><strong>Online code editors</strong>. They have the advantage of not having to install and configure tools on your computer. They are very useful as a sandbox (controlled environment).</p>
+<ul>
+<li><a href="https://stackblitz.com/">Stackblitz</a></li>
+<li><a href="https://codesandbox.io/">Code Sandbox</a></li>
+<li><a href="https://codepen.io/">Code Pen</a></li>
+</ul>
+<h3 id="52-web-browsers"><strong>5.2 Web browsers</strong></h3>
+<p>Developers rely on browsers not only to view web pages but also for essential tools and capabilities that aid in the development and debugging process:</p>
+<ul>
+<li><strong>Development Tools:</strong> Modern browsers come equipped with developer tools (like Chrome Developer Tools, Firefox Developer Tools, and Safari Web Inspector) that provide features such as:<ul>
+<li>DOM Inspection</li>
+<li>CSS Inspection</li>
+<li>Javascript console</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Web Browsers" src="img/08_web_browsers.webp" /></p>
+<h3 id="53-version-control-tools"><strong>5.3 </strong>Version control tools****</h3>
+<p>Version control tools are software systems that help manage changes to files, documents, or any collection of information over time. They are essential for tracking modifications made by individuals or teams, facilitating collaboration, and ensuring the integrity and traceability of project history. The tools we will use are:</p>
+<ul>
+<li><strong>Git</strong>: Git is a distributed version control system designed for speed and efficiency. It allows multiple developers to work on the same project simultaneously and offers branching and merging capabilities. This is a tool we need to install in our computer: <a href="https://git-scm.com/">Git</a></li>
+</ul>
+<p><img alt="Git and GitHub" src="img/09_git.png" /></p>
+<ul>
+<li>
+<p><strong>GitHub</strong>: GitHub primarily functions as a hosting platform for Git repositories, so we can synchronize our local Git project to Github. But we can see all the different purposes of this tool:</p>
+<ol>
+<li>
+<p><strong>Version Control</strong>: GitHub hosts Git repositories, enabling developers to manage and track changes to their codebase over time.</p>
+</li>
+<li>
+<p><strong>Collaboration</strong>: Facilitates teamwork by allowing multiple developers to work on the same project simultaneously, manage branches, and merge changes.</p>
+</li>
+<li>
+<p><strong>Code Hosting</strong>: Provides a platform for developers to host and share their source code repositories, making them accessible for viewing, cloning, and contributing.</p>
+</li>
+<li>
+<p><strong>Issue Tracking</strong>: Includes an issue tracking system for managing and resolving bugs, tasks, and feature requests related to projects.</p>
+</li>
+<li>
+<p><strong>Project Management</strong>: Offers tools like project boards and milestones to organize tasks, track progress, and prioritize work items across teams.</p>
+</li>
+<li>
+<p><strong>CI/CD Integration</strong>: Integrates with CI/CD tools to automate build, test, and deployment processes, ensuring code changes are tested and deployed efficiently.</p>
+</li>
+<li>
+<p><strong>Community and Open Source</strong>: Fosters a community around open source software development, allowing users to discover, contribute to, and collaborate on projects globally.</p>
+</li>
+<li>
+<p><strong>Documentation</strong>: Provides tools for creating and maintaining project documentation, wikis, and README files to explain project goals, usage instructions, and contribution guidelines.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>DOCUMENT DOCUMENT DOCUMENT!!!:</strong></p>
+<blockquote>
+<ul>
+<li>Dont forget to document your project with a <strong>README.md</strong> file written in <strong>Markdown</strong>. Markdown is a lightweight markup language that is commonly used for formatting text on the web. When writing README files on platforms like GitHub, Markdown provides a simple and readable way to structure and style text without needing to write HTML directly.</li>
+<li>Learn something about <a href="https://www.markdownguide.org/cheat-sheet/">Markdown languaje</a>
+<img alt="markdown" src="img/10_md.png" /></li>
+<li>
+<p>See this example -&gt; <a href="https://github.com/jeatzr/txt2gift/blob/main/README.md">README.md</a></p>
+</li>
+<li>
+<p>Example of Markdown syntax:
+</p>
+</li>
+</ul>
+</blockquote>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Project Name
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Description of your project.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>## Installation
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Instructions on how to install and run your project.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>## Usage
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Examples and instructions on how to use your project.
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>### Code Example
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>```javascript
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>console.log(&#39;Hello, World!&#39;);
+</span></code></pre></div>
+<h3 id="54-package-managers"><strong>5.4 Package Managers</strong></h3>
+<p>Package managers help us install various utilities, features, and frameworks. They streamline the process of adding, updating, and managing software packages, ensuring that we have the necessary dependencies and tools to develop and run our applications efficiently.
+Popular examples are pip for Python and npm form JavaScript. 
+In our case, JS,  the two main options are:</p>
+<ul>
+<li>
+<p><strong>npm</strong> (Node Package Manager) is the default package manager for <a href="https://nodejs.org/en">Node.js</a>. It helps developers install, share, and manage JavaScript libraries and dependencies for their projects. It also provides a registry where developers can publish their own packages.</p>
+</li>
+<li>
+<p><strong>Yarn</strong> is an alternative package manager for JavaScript that focuses on speed, security, and reliability. Developed by Facebook, Yarn uses a lockfile to ensure consistent installations across different environments and optimizes the process of installing and updating dependencies.</p>
+</li>
+</ul>
+<p><img alt="npm yarn" src="img/12_npm_yarn.png" /></p>
+<h3 id="55-linters-transpilers-and-bundlers"><strong>5.5 Linters, Transpilers, and Bundlers</strong></h3>
+<p><strong>Linters</strong> are tools that analyze your code to find and fix programming errors, bugs, stylistic errors, and other problematic patterns. They help enforce coding standards and improve code quality. Examples include:</p>
+<ul>
+<li><strong>ESLint</strong>: A popular linter for JavaScript and TypeScript that helps identify and fix problems in your code.</li>
+<li><strong>JSHint</strong>: Another JavaScript linter that detects errors and potential problems in your code.</li>
+</ul>
+<p><img alt="eslint" src="img/12_eslint.png" /></p>
+<p><strong>Transpilers</strong> are tools that convert code written in one programming language or version into another. They are often used to translate modern JavaScript (ES6+) into older versions that are compatible with all browsers. Examples include:</p>
+<ul>
+<li><strong>Babel</strong>: A widely-used JavaScript transpiler that converts ES6+ code into ES5, making it compatible with older browsers.</li>
+<li><strong>TypeScript Compiler (tsc)</strong>: Converts TypeScript code into JavaScript, allowing developers to use TypeScript's type-checking features while still deploying JavaScript.</li>
+<li><strong>Sass</strong>: A preprocessor scripting language that is interpreted or compiled into CSS, making it easier to write and maintain styles.</li>
+</ul>
+<p><img alt="babel" src="img/13_Babel.png" /></p>
+<p><strong>Bundlers</strong> are tools that combine multiple files and modules into a single file (or a few files) for easier distribution and deployment. They handle dependencies, optimize code, and often include features like code splitting and minification. Examples include:</p>
+<ul>
+<li><strong>Webpack</strong>: A powerful module bundler for JavaScript applications that processes and bundles various assets like JavaScript, CSS, and images.</li>
+<li><strong>Parcel</strong>: A fast, zero-configuration web application bundler that works out of the box with no configuration needed.</li>
+<li><strong>Rollup</strong>: A module bundler for JavaScript that compiles small pieces of code into something larger and more complex, often used for building libraries.</li>
+</ul>
+<p><img alt="webpck" src="img/14_webpack.png" /></p>
+<p>These tools are essential in modern web development, helping maintain code quality, ensuring compatibility across different environments, and optimizing the final output for performance.</p>
+<h3 id="56-libraries-and-frameworks"><strong>5.6 Libraries and Frameworks</strong></h3>
+<p><strong>Libraries and frameworks</strong> extend capabilities and simplify the use of JavaScript (JS) or CSS. They provide pre-written code to perform common tasks, helping developers build applications more efficiently and with fewer errors.</p>
+<ul>
+<li><a href="https://getbootstrap.com/"><strong>Bootstrap</strong></a>: A CSS framework that simplifies the creation of web interface elements.</li>
+<li><a href="https://jquery.com/"><strong>jQuery</strong></a>: A JavaScript library that makes using JS easier and improves compatibility. A bit old fashioned and unnecesary, but still used in legacy websites.</li>
+</ul>
+<h4 id="frameworks">Frameworks</h4>
+<ul>
+<li><a href="https://angular.dev/"><strong>Angular</strong></a>: A JS framework created by Google that facilitates the creation of Single Page Applications (SPA) and follows the MVC (Model-View-Controller) pattern. It is widely used and has a large community.</li>
+<li><a href="https://vuejs.org/"><strong>Vue.js</strong></a>: An open-source JS framework also designed for creating SPAs.</li>
+<li><a href="https://react.dev/"><strong>React</strong></a>: An open-source JS library created by Facebook. It is mainly used for defining the View layer, though it can work with extensions to define more parts of the application architecture. It is also used for creating SPAs.</li>
+</ul>
+<p><img alt="JS Evolution" src="img/JSEvol.png" /></p>
+<p><strong>Some jokes :)</strong> <a href="img/meme2.jpg">Framework war Meme</a> - <a href="img/jquery_meme.jpg">jQuery meme</a> </p>
+<div class="exercise-box">
+<h3><i class="fas fa-laptop-code"></i> Hands-On Exercise 1.1</h3>
+<p>Take a look on <a href="https://stateofjs.com/en-US">State Of JS</a> and comment. </p>
+<p>Research different frameworks and select one that you would use to build a Single Page Application (SPA). State the reasons that convinced you.</p>
+</div>
+
+<h2 id="6-include-javascript-code"><a href="06_include_js/"><strong>6. Include JavaScript code.</strong></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.exercise-box {
+  border: 2px solid #DBBB37;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+.exercise-box h3 {
+  margin-top: 0;
+  color: #DBBB37;
+  display: flex;
+  align-items: center;
+}
+
+.exercise-box h3 .fas {
+  margin-right: 10px;
+}
