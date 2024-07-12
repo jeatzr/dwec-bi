@@ -209,7 +209,7 @@ JavaScript has several primitive data types:
 
 These are the basic building blocks of data in JavaScript. Understanding and using them appropriately is crucial for effective programming in JavaScript.
 
-### **4.1 Number Data Type**
+### **4.1 Number Type**
 
 In JavaScript, the `number` data type represents both integers and floating-point numbers.
 
@@ -348,7 +348,7 @@ let numberToString = (123).toString();  // '123'
 let fixedDecimal = (123.456).toFixed(2);  // '123.46'
 ```
 
-### **4.2 String Data Type**
+### **4.2 String Type**
 
 In JavaScript, the `string` data type is used to represent textual data.
 
@@ -462,5 +462,116 @@ Springfield, IL
     </ol>
 </div>
 
-### **4.3 Boolean Data Type**
+### **4.3 Boolean Type**
+
+- It only accepts two values: `true` or `false`
+- It is useful for checking the state of the application
+- It is recommended that its name defines the positive state
+    - Example: `userIsLogged`, `itemFound`, `errorFound` 
+
+- `Boolean(value);` returns the boolean value of a condition or variable.
+
+#### Boolean()
+
+`Boolean(value);` returns the boolean value of a condition or variable.
+
+#### True vs False 
+
+| True         | False       |
+| ------------ | ----------- |
+| 1            | 0, -0       |
+| `"Whatever"` | `""`        |
+| 3.14         | NaN         |
+| `100 > 5`    | null        |
+| `1 < 100`    | undefined   |
+| `'1' == 1`   | `'1' === 1` |
+
+```js
+// Example 1: Using Boolean() to get the boolean value
+console.log(Boolean(1));           // true
+console.log(Boolean(0));           // false
+console.log(Boolean("Whatever"));  // true
+console.log(Boolean(""));          // false
+
+// Example 2: Using expressions
+console.log(100 > 5);              // true
+console.log(1 < 100);              // true
+console.log('1' == 1);             // true
+console.log('1' === 1);            // false
+
+// Example 3: Checking for undefined and null
+let a;
+console.log(Boolean(a));           // false
+
+let b = null;
+console.log(Boolean(b));           // false
+
+// Example 4: NaN check
+let c = NaN;
+console.log(Boolean(c));           // false
+console.log(isNaN(c));             // true
+
+// Example 5: Combining multiple checks
+let value = "Hello";
+if (value && typeof value === "string") {
+    console.log("Value is a non-empty string"); // This will log
+}
+
+let number = 0;
+if (!number) {
+    console.log("Number is zero or false"); // This will log
+}
+```
+
+### 4.4 Undefined and Null Types
+
+In JavaScript, `undefined` and `null` are two distinct types that represent absence of value or non-existence. They are often confused with each other but have different meanings and use cases.
+
+#### Undefined
+- **Type**: `undefined`
+- **Description**: A variable that has been declared but has not yet been assigned a value has the value `undefined`.
+- **Example**:
+    ```javascript
+    let a;
+    console.log(a); // Output: undefined
+    ```
+
+#### Null
+- **Type**: `object`
+- **Description**: `null` is an assignment value that can be used to represent no value or no object. It's explicitly set by the programmer to indicate "no value".
+- **Example**:
+    ```javascript
+    let b = null;
+    console.log(b); // Output: null
+    ```
+
+#### Key Differences
+
+- **Type**:
+    - `undefined`: The type of `undefined` is `undefined`.
+    - `null`: The type of `null` is `object` (this is a historical bug in JavaScript, but it remains for backward compatibility).
+
+- **Default Value**:
+    - `undefined` is the default value for uninitialized variables.
+    - `null` is an explicit assignment to indicate an empty or non-existent value.
+
+- **Usage**:
+    - Use `undefined` to check if a variable has been declared but not yet assigned a value.
+    - Use `null` to intentionally signify that a variable should be empty.
+
+#### Examples
+
+```javascript
+// Undefined example
+let x;
+console.log(x); // Output: undefined
+
+// Null example
+let y = null;
+console.log(y); // Output: null
+
+// Checking types
+console.log(typeof x); // Output: undefined
+console.log(typeof y); // Output: object
+```
 

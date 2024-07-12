@@ -6,7 +6,7 @@ nav:
   - U2 - JS Fundamentals: 02_js_fundamentals/README.md
 
 theme: 
-  logo: /01_frontend_introduction/img/JSEvol.png
+  logo: 01_frontend_introduction/img/JSEvol.png
   name: material
   features:
     - content.code.copy
