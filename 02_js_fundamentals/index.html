@@ -426,27 +426,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-number-data-type" class="md-nav__link">
+  <a href="#41-number-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Number Data Type
+      4.1 Number Type
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-string-data-type" class="md-nav__link">
+  <a href="#42-string-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 String Data Type
+      4.2 String Type
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-boolean-data-type" class="md-nav__link">
+  <a href="#43-boolean-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Boolean Data Type
+      4.3 Boolean Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-undefined-and-null-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Undefined and Null Types
     </span>
   </a>
   
@@ -595,27 +604,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-number-data-type" class="md-nav__link">
+  <a href="#41-number-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Number Data Type
+      4.1 Number Type
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-string-data-type" class="md-nav__link">
+  <a href="#42-string-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 String Data Type
+      4.2 String Type
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-boolean-data-type" class="md-nav__link">
+  <a href="#43-boolean-type" class="md-nav__link">
     <span class="md-ellipsis">
-      4.3 Boolean Data Type
+      4.3 Boolean Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-undefined-and-null-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Undefined and Null Types
     </span>
   </a>
   
@@ -795,7 +813,7 @@ When the code execution reaches the debugger statement, it will pause, allowing 
 <li><strong>Null:</strong> <code>null</code> is an assignment value. It can be assigned to a variable as a representation of no value.</li>
 </ul>
 <p>These are the basic building blocks of data in JavaScript. Understanding and using them appropriately is crucial for effective programming in JavaScript.</p>
-<h3 id="41-number-data-type"><strong>4.1 Number Data Type</strong></h3>
+<h3 id="41-number-type"><strong>4.1 Number Type</strong></h3>
 <p>In JavaScript, the <code>number</code> data type represents both integers and floating-point numbers.</p>
 <h4 id="characteristics-of-numbers">Characteristics of Numbers</h4>
 <ul>
@@ -918,7 +936,7 @@ When the code execution reaches the debugger statement, it will pause, allowing 
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1">// Format number to fixed decimal places</span>
 </span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fixedDecimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">123.456</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;123.46&#39;</span>
 </span></code></pre></div>
-<h3 id="42-string-data-type"><strong>4.2 String Data Type</strong></h3>
+<h3 id="42-string-type"><strong>4.2 String Type</strong></h3>
 <p>In JavaScript, the <code>string</code> data type is used to represent textual data.</p>
 <h4 id="characteristics-of-strings">Characteristics of Strings</h4>
 <ul>
@@ -1024,7 +1042,149 @@ When the code execution reaches the debugger statement, it will pause, allowing 
     </ol>
 </div>
 
-<h3 id="43-boolean-data-type"><strong>4.3 Boolean Data Type</strong></h3>
+<h3 id="43-boolean-type"><strong>4.3 Boolean Type</strong></h3>
+<ul>
+<li>It only accepts two values: <code>true</code> or <code>false</code></li>
+<li>It is useful for checking the state of the application</li>
+<li>
+<p>It is recommended that its name defines the positive state</p>
+<ul>
+<li>Example: <code>userIsLogged</code>, <code>itemFound</code>, <code>errorFound</code> </li>
+</ul>
+</li>
+<li>
+<p><code>Boolean(value);</code> returns the boolean value of a condition or variable.</p>
+</li>
+</ul>
+<h4 id="boolean">Boolean()</h4>
+<p><code>Boolean(value);</code> returns the boolean value of a condition or variable.</p>
+<h4 id="true-vs-false">True vs False</h4>
+<table>
+<thead>
+<tr>
+<th>True</th>
+<th>False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0, -0</td>
+</tr>
+<tr>
+<td><code>"Whatever"</code></td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td>3.14</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td><code>100 &gt; 5</code></td>
+<td>null</td>
+</tr>
+<tr>
+<td><code>1 &lt; 100</code></td>
+<td>undefined</td>
+</tr>
+<tr>
+<td><code>'1' == 1</code></td>
+<td><code>'1' === 1</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">// Example 1: Using Boolean() to get the boolean value</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span><span class="w">           </span><span class="c1">// true</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">           </span><span class="c1">// false</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s2">&quot;Whatever&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span><span class="w">          </span><span class="c1">// false</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1">// Example 2: Using expressions</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">100</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span><span class="w">              </span><span class="c1">// true</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w">              </span><span class="c1">// true</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">             </span><span class="c1">// true</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">            </span><span class="c1">// false</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="c1">// Example 3: Checking for undefined and null</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="p">;</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span><span class="w">           </span><span class="c1">// false</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="nx">b</span><span class="p">));</span><span class="w">           </span><span class="c1">// false</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="c1">// Example 4: NaN check</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NaN</span><span class="p">;</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span><span class="w">           </span><span class="c1">// false</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span><span class="w">             </span><span class="c1">// true</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="c1">// Example 5: Combining multiple checks</span>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value is a non-empty string&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// This will log</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="p">}</span>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="kd">let</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Number is zero or false&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// This will log</span>
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="44-undefined-and-null-types">4.4 Undefined and Null Types</h3>
+<p>In JavaScript, <code>undefined</code> and <code>null</code> are two distinct types that represent absence of value or non-existence. They are often confused with each other but have different meanings and use cases.</p>
+<h4 id="undefined">Undefined</h4>
+<ul>
+<li><strong>Type</strong>: <code>undefined</code></li>
+<li><strong>Description</strong>: A variable that has been declared but has not yet been assigned a value has the value <code>undefined</code>.</li>
+<li><strong>Example</strong>:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="p">;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: undefined</span>
+</span></code></pre></div></li>
+</ul>
+<h4 id="null">Null</h4>
+<ul>
+<li><strong>Type</strong>: <code>object</code></li>
+<li><strong>Description</strong>: <code>null</code> is an assignment value that can be used to represent no value or no object. It's explicitly set by the programmer to indicate "no value".</li>
+<li><strong>Example</strong>:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: null</span>
+</span></code></pre></div></li>
+</ul>
+<h4 id="key-differences">Key Differences</h4>
+<ul>
+<li>
+<p><strong>Type</strong>:</p>
+<ul>
+<li><code>undefined</code>: The type of <code>undefined</code> is <code>undefined</code>.</li>
+<li><code>null</code>: The type of <code>null</code> is <code>object</code> (this is a historical bug in JavaScript, but it remains for backward compatibility).</li>
+</ul>
+</li>
+<li>
+<p><strong>Default Value</strong>:</p>
+<ul>
+<li><code>undefined</code> is the default value for uninitialized variables.</li>
+<li><code>null</code> is an explicit assignment to indicate an empty or non-existent value.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>:</p>
+<ul>
+<li>Use <code>undefined</code> to check if a variable has been declared but not yet assigned a value.</li>
+<li>Use <code>null</code> to intentionally signify that a variable should be empty.</li>
+</ul>
+</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">// Undefined example</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: undefined</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1">// Null example</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: null</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1">// Checking types</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: undefined</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: object</span>
+</span></code></pre></div>
 
 
 
