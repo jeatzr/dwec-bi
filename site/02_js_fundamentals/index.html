@@ -1,0 +1,1083 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_frontend_introduction/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>U2 - JS Fundamentals - DWEC Bilingual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit2-js-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DWEC Bilingual" class="md-header__button md-logo" aria-label="DWEC Bilingual" data-md-component="logo">
+      
+  <img src="/01_frontend_introduction/img/JSEvol.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DWEC Bilingual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U2 - JS Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DWEC Bilingual" class="md-nav__button md-logo" aria-label="DWEC Bilingual" data-md-component="logo">
+      
+  <img src="/01_frontend_introduction/img/JSEvol.png" alt="logo">
+
+    </a>
+    DWEC Bilingual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_frontend_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U1 - Introduction to Frontend Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    U2 - JS Fundamentals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    U2 - JS Fundamentals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-general-syntax-of-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. General Syntax of JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-console-messages-and-browser-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Console messages and browser alerts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Console messages and browser alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-debugging-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Debugging Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-alert-prompt-and-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Alert, Prompt and Confirm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-variable-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Variable declaration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Variable declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      var
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let" class="md-nav__link">
+    <span class="md-ellipsis">
+      let
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    <span class="md-ellipsis">
+      const
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Primitive Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-number-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Number Data Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-string-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 String Data Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-boolean-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Boolean Data Type
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-general-syntax-of-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. General Syntax of JavaScript
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-console-messages-and-browser-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Console messages and browser alerts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Console messages and browser alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-debugging-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Debugging Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-alert-prompt-and-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Alert, Prompt and Confirm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-variable-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Variable declaration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Variable declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      var
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let" class="md-nav__link">
+    <span class="md-ellipsis">
+      let
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    <span class="md-ellipsis">
+      const
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-primitive-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Primitive Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Primitive Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-number-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Number Data Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-string-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 String Data Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-boolean-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Boolean Data Type
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="unit2-js-fundamentals"><strong>UNIT2 - JS Fundamentals</strong></h1>
+<h2 id="1-general-syntax-of-javascript"><strong>1. General Syntax of JavaScript</strong></h2>
+<h4 id="ecmascript-syntax">ECMAScript Syntax</h4>
+<p>JavaScript, also known as ECMAScript, has a syntax similar to languages like C++ and Java.</p>
+<h4 id="single-line-comments">Single-line Comments</h4>
+<p>Use <code>//</code> to write comments on a single line.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// This is a single-line comment</span>
+</span></code></pre></div>
+<h4 id="multi-line-comments">Multi-line Comments</h4>
+<p>Use <code>/* ... */</code> to write comments that span multiple lines.
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* This is </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">a multiline</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">comment</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm">*/</span>
+</span></code></pre></div></p>
+<h4 id="semicolons">Semicolons</h4>
+<p>The semicolon (<code>;</code>) at the end of a line is optional but recommended to avoid potential issues during code execution.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// Semicolon is recommended</span>
+</span></code></pre></div>
+<h4 id="reserved-words">Reserved words</h4>
+<p>Do not use reserved keywords for variable names, as they have special meaning in the language.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Incorrect</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;for&#39; is a reserved word</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// Correct</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>List of reserved words: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words</a></p>
+<h4 id="weak-typing">Weak typing</h4>
+<p>JavaScript is a weakly typed language, meaning you do not need to declare data types explicitly.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// No need to declare type, it&#39;s a number</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">// Now it&#39;s a string</span>
+</span></code></pre></div></p>
+<p>Lexical Grammar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar</a></p>
+<h2 id="2-console-messages-and-browser-alerts"><strong>2. Console messages and browser alerts</strong></h2>
+<h3 id="21-debugging-console"><strong>2.1 Debugging Console</strong></h3>
+<p>We can view the console in the browser by selecting the "Inspect" option.
+We can interact with the system console object by invoking its methods.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span><span class="w">           </span><span class="c1">// general message</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;This is an info message&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// info message</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;Be careful!&#39;</span><span class="p">);</span><span class="w">            </span><span class="c1">// warning message</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Fatal error&#39;</span><span class="p">);</span><span class="w">           </span><span class="c1">// error message</span>
+</span></code></pre></div>
+<h4 id="debugger-statement">Debugger statement</h4>
+<p>The <code>debugger</code> statement can be used to pause the execution of a script for debugging purposes.</p>
+<p>Using the <code>debugger</code> statement, you can pause the code execution at a specific point to inspect the current state of variables and the call stack.</p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="k">debugger</span><span class="p">;</span><span class="w">  </span><span class="c1">// Execution will pause here if the developer tools are open</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span></code></pre></div>
+When the code execution reaches the debugger statement, it will pause, allowing you to use the browser's developer tools to inspect the current state and debug your code effectively.</p>
+<h3 id="22-alert-prompt-and-confirm"><strong>2.2 Alert, Prompt and Confirm</strong></h3>
+<p>These methods are used to show browser alerts, request data, and confirm actions with an OK/Cancel dialog.</p>
+<h4 id="alert">alert()</h4>
+<p>The <code>alert()</code> method displays an alert dialog with a specified message and an OK button.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;This is an alert message!&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="prompt">prompt()</h4>
+<p>The <code>prompt()</code> method displays a dialog with a message prompting the user to input some text. It returns the text entered by the user, or <code>null</code> if the user pressed Cancel.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Please enter your name:&quot;</span><span class="p">);</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User entered: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">userInput</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="confirm">confirm()</h4>
+<p>The <code>confirm()</code> method displays a dialog with a specified message, along with an OK and a Cancel button. It returns <code>true</code> if the user pressed OK, and <code>false</code> otherwise.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">userConfirmed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Do you really want to delete this item?&quot;</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">userConfirmed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User confirmed the action.&quot;</span><span class="p">);</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User canceled the action.&quot;</span><span class="p">);</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="best-practices">Best Practices</h4>
+<p>We should try to avoid using these methods whenever possible. They interrupt the user experience and are generally considered bad practice for modern web development. We will use them only for now, as we do not yet know other forms of dynamic communication with the user.</p>
+<h2 id="3-variable-declaration"><strong>3. Variable declaration</strong></h2>
+<p>We can declare variables in three ways:</p>
+<h3 id="var"><strong>var</strong></h3>
+<p>The traditional way to declare a variable. Is is not recomended nowadays. </p>
+<p>Variables declared with <code>var</code> inside a function are <strong>function-scoped</strong>, meaning they are accessible throughout the function in which they are declared, but not outside of it. </p>
+<p><code>var</code>  will create <strong>globally-scoped</strong> variables when declared outside of a function or in the global scope.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">globalVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m accessible from anywhere in the script&quot;</span><span class="p">;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">testVar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">functionVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m accessible within this function only&quot;</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible from anywhere in the script</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">functionVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible within this function only</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible from anywhere in the script</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">// console.log(functionVar);  // Uncaught ReferenceError: functionVar is not defined</span>
+</span></code></pre></div>
+<h3 id="let"><strong>let</strong></h3>
+<p>A variable that is only accessible within the block, statement, or expression where it is declared. <code>let</code> is <strong>block-scoped</strong>.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">testLet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">blockVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m accessible within this block only&quot;</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">innerBlockVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m accessible within this inner block only&quot;</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible within this block only</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerBlockVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible within this inner block only</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m accessible within this block only</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="c1">// console.log(innerBlockVar);  // Uncaught ReferenceError: innerBlockVar is not defined</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="const"><strong>const</strong></h3>
+<p>A constant that is only accessible within the block, statement, or expression where it is declared. Constants cannot be reassigned after their initial declaration. <code>const</code> is <strong>block-scoped</strong>.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">testConst</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">constantVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m a constant within this block&quot;</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">innerConstantVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&#39;m a constant within this inner block&quot;</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">constantVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m a constant within this block</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerConstantVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m a constant within this inner block</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">constantVar</span><span class="p">);</span><span class="w">  </span><span class="c1">// Outputs: I&#39;m a constant within this block</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="c1">// console.log(innerConstantVar);  // Uncaught ReferenceError: innerConstantVar is not defined</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="c1">// constantVar = &quot;New value&quot;;  // Uncaught TypeError: Assignment to constant variable.</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="best-practices_1"><strong>Best Practices</strong></h3>
+<p>It is recommended to use <code>let</code> or <code>const</code> depending on whether the value of the variable should change or not.</p>
+<ul>
+<li>Use <code>let</code> for variables that will change.</li>
+<li>Use <code>const</code> for variables that should not change.</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">mutableVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I can change&quot;</span><span class="p">;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">mutableVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I have changed&quot;</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">immutableVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I cannot change&quot;</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// immutableVariable = &quot;Trying to change&quot;;  // Uncaught TypeError: Assignment to constant variable.</span>
+</span></code></pre></div>
+<h2 id="4-primitive-data-types"><strong>4. Primitive Data Types</strong></h2>
+<p>JavaScript has several primitive data types:</p>
+<ul>
+<li>
+<p><strong>Number:</strong> Represents both integer and floating-point numbers.</p>
+</li>
+<li>
+<p><strong>String:</strong> Represents a sequence of characters (text).</p>
+</li>
+<li>
+<p><strong>Boolean:</strong> Represents a logical entity and can have two values: <code>true</code> or <code>false</code>.</p>
+</li>
+<li>
+<p><strong>Undefined:</strong> Indicates that a variable has been declared but has not yet been assigned a value.</p>
+</li>
+<li>
+<p><strong>Null:</strong> Represents the intentional absence of any object value. It is one of JavaScript's primitive values and is treated as falsy for boolean operations.</p>
+</li>
+</ul>
+<h4 id="note">Note:</h4>
+<ul>
+<li><strong>Undefined:</strong> <code>undefined</code> means a variable has been declared but has not yet been assigned a value.</li>
+<li><strong>Null:</strong> <code>null</code> is an assignment value. It can be assigned to a variable as a representation of no value.</li>
+</ul>
+<p>These are the basic building blocks of data in JavaScript. Understanding and using them appropriately is crucial for effective programming in JavaScript.</p>
+<h3 id="41-number-data-type"><strong>4.1 Number Data Type</strong></h3>
+<p>In JavaScript, the <code>number</code> data type represents both integers and floating-point numbers.</p>
+<h4 id="characteristics-of-numbers">Characteristics of Numbers</h4>
+<ul>
+<li><strong>Positive or Negative Numbers:</strong></li>
+</ul>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">positiveNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">negativeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">30</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Numbers with or without decimals</strong></li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">integer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">34</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">floatingPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">34.4</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">zero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">negativeFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">9.45</span><span class="p">;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">largeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150000000</span><span class="p">;</span>
+</span></code></pre></div>
+<h4 id="arithmetic-operations">Arithmetic Operations</h4>
+<p>You can perform various arithmetic operations on numbers:</p>
+<ul>
+<li>Addition <code>+</code></li>
+<li>Subtraction <code>-</code></li>
+<li>Multiplication <code>*</code></li>
+<li>Division <code>/</code></li>
+<li>Modulus <code>%</code>: Returns the remainder of a division.</li>
+<li>Exponentiation <code>**</code>: Raises the first operand to the power of the second operand.</li>
+<li>Increment <code>++</code>: Increases the value of a variable by 1.</li>
+<li>Decrement <code>--</code>: Decreases the value of a variable by 1.</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// 9</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// 7</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// 12</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">quotient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// 3</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// 8</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nx">counter</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// counter is now 1</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="kd">let</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="nx">counter</span><span class="o">--</span><span class="p">;</span><span class="w">  </span><span class="c1">// counter is now 0</span>
+</span></code></pre></div>
+<h4 id="comparison-operations">Comparison Operations</h4>
+<p>You can also compare numbers using various comparison operators:</p>
+<ul>
+<li>Less than <code>&lt;</code></li>
+<li>Greater than <code>&gt;</code></li>
+<li>Less than or equal to <code>&lt;=</code></li>
+<li>Greater than or equal to <code>&gt;=</code></li>
+<li>Equal to <code>==</code></li>
+<li>Strict equal to <code>===</code></li>
+<li>Not equal to <code>!=</code></li>
+<li>Strict not equal to <code>!==</code></li>
+</ul>
+<p><div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isLessThan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isGreaterThan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isLessThanOrEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isGreaterThanOrEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// true (type coercion)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isStrictEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isStrictEqualToDifferentTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// false (no type coercion)</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isNotEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// false (type coercion)</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isStrictNotEqualTo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// true (no type coercion)</span>
+</span></code></pre></div>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">--&gt; Equality comparisons and sameness</a></p>
+<h4 id="additional-number-methods">Additional Number Methods</h4>
+<p>JavaScript also provides several built-in methods for working with numbers by the Math object.</p>
+<ul>
+<li><code>Math.abs()</code>: Absolute value</li>
+<li><code>Math.ceil()</code>: Round up</li>
+<li><code>Math.floor()</code>: Round down</li>
+<li><code>Math.round()</code>: Round to nearest integer</li>
+<li><code>Math.max()</code>: Maximum value</li>
+<li><code>Math.min()</code>: Minimum value</li>
+<li><code>Math.random()</code>: Random number between 0 and 1</li>
+<li><code>Math.sqrt()</code>: Square root</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">absoluteValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">roundedUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">4.2</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">roundedDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">4.8</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">rounded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">4.5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">roundedDownExample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">4.4</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span><span class="w">  </span><span class="c1">// e.g., 0.543</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="kd">let</span><span class="w"> </span><span class="nx">squareRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mf">16</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4</span>
+</span></code></pre></div>
+<div class="exercise-box">
+<h3><i class="fas fa-laptop-code"></i> Hands-On Exercise</h3>
+<p>In JS there is not an operator to calculate the <strong>integer division</strong> operation. Can you implement a way to obtain this operation using the operations listed above
+?</p>
+<p>Examples:</p>
+<ul>
+  <li>10 // 3 = 3</li>
+  <li>13 // -3 = -4</li>
+</ul>
+</div>
+
+<h4 id="more-about-number">More about number</h4>
+<ul>
+<li><code>typeof</code>: Type of the variable</li>
+<li><code>NaN</code>: Not-a-Number</li>
+<li><code>isNaN()</code>: Check if value is NaN</li>
+<li><code>.toString()</code>: Convert number to string</li>
+<li><code>.toFixed()</code>: Format number to fixed decimal places</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">// Type of the variable</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">typeOfNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="mf">123</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;number&#39;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">typeOfString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="s1">&#39;123&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;string&#39;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1">// NaN (Not-a-Number)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">notANumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NaN</span><span class="p">;</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isNanCheck1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isNanCheck2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isNanCheck3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="c1">// Convert number to string</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="kd">let</span><span class="w"> </span><span class="nx">numberToString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">123</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;123&#39;</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1">// Format number to fixed decimal places</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="kd">let</span><span class="w"> </span><span class="nx">fixedDecimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">123.456</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;123.46&#39;</span>
+</span></code></pre></div>
+<h3 id="42-string-data-type"><strong>4.2 String Data Type</strong></h3>
+<p>In JavaScript, the <code>string</code> data type is used to represent textual data.</p>
+<h4 id="characteristics-of-strings">Characteristics of Strings</h4>
+<ul>
+<li><strong>Strings</strong>: A sequence of characters enclosed in quotes.</li>
+<li>Double quotes: <code>"Hello world"</code></li>
+<li>Single quotes: <code>'Hello world'</code></li>
+</ul>
+<h4 id="operations-with-strings">Operations with Strings</h4>
+<ul>
+<li><strong>Concatenation</strong>: Combining multiple strings into one.<ul>
+<li>Example: <code>cadena = 'Hola' + ' mundo'</code> results in <code>'Hola mundo'</code></li>
+</ul>
+</li>
+<li><strong>Comparison Operations</strong>: Comparing strings.<ul>
+<li>Equal to (<code>==</code>)</li>
+<li>Strict equal to (<code>===</code>)</li>
+<li>Not equal to (<code>!=</code>)</li>
+</ul>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// Characteristics of Strings</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">string1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello world&quot;</span><span class="p">;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">string2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello world&#39;</span><span class="p">;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1">// Concatenation</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; mundo&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;Hola mundo&#39;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1">// Comparison Operations</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isStrictEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isStrictEqual2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;123&#39;</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">132</span><span class="p">;</span><span class="w">  </span><span class="c1">// false</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="kd">let</span><span class="w"> </span><span class="nx">isNotEqual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;World&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="c1">// Other useful methods</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="kd">let</span><span class="w"> </span><span class="nx">stringLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w">  </span><span class="c1">// 10</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="kd">let</span><span class="w"> </span><span class="nx">upperCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;HOLA MUNDO&#39;</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="kd">let</span><span class="w"> </span><span class="nx">lowerCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;hola mundo&#39;</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="kd">let</span><span class="w"> </span><span class="nx">includesWord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;mundo&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="kd">let</span><span class="w"> </span><span class="nx">splitString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&#39;Hola&#39;, &#39;mundo&#39;]</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="kd">let</span><span class="w"> </span><span class="nx">substring</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;ola&#39;  substring(start, end+1)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="kd">let</span><span class="w"> </span><span class="nx">charAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;o&#39;</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="kd">let</span><span class="w"> </span><span class="nx">indexOfChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="kd">let</span><span class="w"> </span><span class="nx">replacedString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greeting</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;mundo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;everyone&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Hola everyone&#39;</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="kd">let</span><span class="w"> </span><span class="nx">trimmedString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;   Hola mundo   &#39;</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;Hola mundo&#39;</span>
+</span></code></pre></div>
+<h4 id="template-literals">Template literals</h4>
+<p>Template literals, also known as template strings, are a feature in JavaScript that allows for easier string interpolation and multi-line strings. They are enclosed by backticks (<code>`</code>) instead of single or double quotes.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello, world!`</span><span class="p">;</span>
+</span></code></pre></div>
+<h4 id="features-of-template-literals">Features of Template Literals</h4>
+<ol>
+<li><strong>String Interpolation</strong>: Embed expressions within a string using the <code>${expression}</code> syntax.</li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="p">;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">introduction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`My name is </span><span class="si">${</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="si">}</span><span class="sb"> and I am </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`2 + 2 is </span><span class="si">${</span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;2 + 2 is 4&quot;</span>
+</span></code></pre></div>
+<ol>
+<li><strong>Multi-line Strings</strong>: Create strings that span multiple lines.</li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`1234 Elm Street</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="sb">Springfield, IL</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="sb">62704`</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="exercise-box">
+    <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Working with Strings in JavaScript</h3>
+    <p>Follow these steps to complete the exercise:</p>
+    <ol>
+        <li><strong>Concatenation and Template Literals</strong>:
+            <ul>
+                <li>Create two string variables, <code>firstName</code> and <code>lastName</code>.</li>
+                <li>Concatenate them using both the <code>+</code> operator and template literals to form a full name.</li>
+            </ul>
+        </li>
+        <li><strong>String Methods</strong>:
+            <ul>
+                <li>Use <code>.toUpperCase()</code> and <code>.toLowerCase()</code> methods to change the case of the full name.</li>
+                <li>Extract a substring from the full name using both <code>substring()</code> and <code>slice()</code>.</li>
+            </ul>
+        </li>
+        <li><strong>String Interpolation</strong>:
+            <ul>
+                <li>Create a multi-line string using template literals that includes the full name and an address.</li>
+            </ul>
+        </li>
+        <li><strong>Splitting and Trimming Strings</strong>:
+            <ul>
+                <li>Create a string that includes a list of comma-separated items.</li>
+                <li>Split the string into an array and trim any extra whitespace from each item.</li>
+            </ul>
+        </li>
+        <li><strong>Checking and Converting</strong>:
+            <ul>
+                <li>Create a variable that includes a number as a string.</li>
+                <li>Check if it is a number using <code>isNaN()</code> and convert it to a number.</li>
+                <li>Use <code>.toString()</code> to convert a number back to a string.</li>
+                <li>Use <code>.toFixed()</code> to format a number to two decimal places.</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<h3 id="43-boolean-data-type"><strong>4.3 Boolean Data Type</strong></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
