@@ -2,8 +2,13 @@ site_name: DWEC Bilingual
 
 nav:
   - Home: index.md
-  - U1 - Introduction to Frontend Tools: 01_frontend_introduction/README.md
+  - U1 - Frontend Tools: 01_frontend_introduction/README.md
   - U2 - JS Fundamentals: 02_js_fundamentals/README.md
+  - U3 - Objects, Classes and Arrays: 03_objects_arrays/README.md
+  - U4 - Manipulating the DOM: 04_DOM/README.md
+  - U5 - Events and Forms: 05_events_forms/README.md
+  - U6 - AJAX: 06_AJAX/README.md
+  - U7 - Local Storage: 07_local_storage/README.md
 
 theme: 
   logo: 01_frontend_introduction/img/JSEvol.png
@@ -33,7 +38,7 @@ theme:
       primary: teal
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to automatic mode
 
 extra_css:
   - 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'

@@ -117,9 +117,9 @@ We should try to avoid using these methods whenever possible. They interrupt the
 
 We can declare variables in three ways:
 
-### **var**
+#### **var**
 
-The traditional way to declare a variable. Is is not recomended nowadays. 
+The traditional way to declare a variable. It is not recomended nowadays. 
 
 Variables declared with `var` inside a function are **function-scoped**, meaning they are accessible throughout the function in which they are declared, but not outside of it. 
 
@@ -136,7 +136,7 @@ console.log(globalVar);  // Outputs: I'm accessible from anywhere in the script
 // console.log(functionVar);  // Uncaught ReferenceError: functionVar is not defined
 ```
 
-### **let**
+#### **let**
 
 A variable that is only accessible within the block, statement, or expression where it is declared. `let` is **block-scoped**.
 
@@ -153,7 +153,7 @@ function testLet() {
 }
 ```
 
-### **const**
+#### **const**
 
 A constant that is only accessible within the block, statement, or expression where it is declared. Constants cannot be reassigned after their initial declaration. `const` is **block-scoped**.
 
@@ -171,7 +171,7 @@ function testConst() {
 }
 ```
 
-### **Best Practices**
+#### **Best Practices**
 
 It is recommended to use `let` or `const` depending on whether the value of the variable should change or not.
 
@@ -286,30 +286,10 @@ let isStrictNotEqualTo = 5 !== '5';  // true (no type coercion)
 ```
 [--> Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 
-#### Additional Number Methods
+#### Additional Number Methods in Math Object
 
-JavaScript also provides several built-in methods for working with numbers by the Math object.
+JavaScript also provides several built-in methods for working with numbers by the [Math Object](#62-math-object).
 
-- `Math.abs()`: Absolute value
-- `Math.ceil()`: Round up
-- `Math.floor()`: Round down
-- `Math.round()`: Round to nearest integer
-- `Math.max()`: Maximum value
-- `Math.min()`: Minimum value
-- `Math.random()`: Random number between 0 and 1
-- `Math.sqrt()`: Square root
-
-```js
-let absoluteValue = Math.abs(-5);  // 5
-let roundedUp = Math.ceil(4.2);  // 5
-let roundedDown = Math.floor(4.8);  // 4
-let rounded = Math.round(4.5);  // 5
-let roundedDownExample = Math.round(4.4);  // 4
-let max = Math.max(1, 2, 3);  // 3
-let min = Math.min(1, 2, 3);  // 1
-let random = Math.random();  // e.g., 0.543
-let squareRoot = Math.sqrt(16);  // 4
-```
 
 <div class="exercise-box">
 <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise</h3>
@@ -366,6 +346,7 @@ In JavaScript, the `string` data type is used to represent textual data.
     - Equal to (`==`)
     - Strict equal to (`===`)
     - Not equal to (`!=`)
+- **Other Useful Methods**: We can find them in the [String Object](#64-string-object)
 
 
 ```js
@@ -523,7 +504,7 @@ if (!number) {
 }
 ```
 
-### 4.4 Undefined and Null Types
+### **4.4 Undefined and Null Types**
 
 In JavaScript, `undefined` and `null` are two distinct types that represent absence of value or non-existence. They are often confused with each other but have different meanings and use cases.
 
@@ -574,4 +555,447 @@ console.log(y); // Output: null
 console.log(typeof x); // Output: undefined
 console.log(typeof y); // Output: object
 ```
+## **5. Control Sentences**
+
+### **5.1 Conditional Statements**
+
+#### [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) 
+
+Conditional statements allow the execution of specific code blocks based on certain conditions. The most common conditional statements are `if`, `else if`, and `else`.
+
+Examples of usage:
+
+```js
+let number = 10;
+
+if (number > 0) {
+    console.log("The number is positive.");
+} else if (number < 0) {
+    console.log("The number is negative.");
+} else {
+    console.log("The number is zero.");
+}
+```
+
+#### [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+
+A `switch` statement evaluates a variable or expression and matches its value to one of several possible cases. Each case corresponds to a specific code block that executes when a match is found. If no match is found, an optional `default` case can execute.
+
+Examples of usage:
+
+#### JavaScript
+
+```javascript
+let fruit = 'apple';
+
+switch (fruit) {
+    case 'apple':
+        console.log("This is an apple.");
+        break;
+    case 'banana':
+        console.log("This is a banana.");
+        break;
+    case 'orange':
+        console.log("This is an orange.");
+        break;
+    default:
+        console.log("Unknown fruit.");
+}
+```
+
+#### [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
+
+
+The conditional ternary operator is a concise way to perform conditional evaluations. It takes three operands: a condition, a result for true, and a result for false. The syntax is:
+
+`condition ? expression_if_true : expression_if_false`
+
+Examples of usage:
+
+```javascript
+let age = 18;
+let canVote = (age >= 18) ? "Yes, you can vote." : "No, you cannot vote.";
+console.log(canVote);
+```
+
+### **5.2 Loops or Iterations**
+
+#### [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) (traditional loop with a counter)
+The `for` loop is a traditional loop that iterates with a counter. It is used to repeat a block of code a certain number of times.
+
+Examples of usage:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// Counting backwards in 5 units steps
+for (let i = 50; i >= 0; i -= 5) {
+    console.log(i);
+}
+```
+
+#### [for..in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) (iterates over properties of an object)
+The `for..in` loop iterates over the enumerable properties of an object. It is used to traverse object properties.
+
+Examples of usage:
+```js
+let person = {name: 'John', age: 30, city: 'New York'};
+for (let key in person) {
+    console.log(key + ': ' + person[key]);
+}
+```
+#### [for..of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) (ES6) (iterates over a collection of objects)
+The `for..of` loop, introduced in ES6, iterates over iterable objects such as arrays, strings, and other collections.
+
+Examples of usage:
+
+```js
+let fruits = ['apple', 'banana', 'orange'];
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+```
+
+#### [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) (method to iterate over a collection of objects)
+
+However, in JavaScript, **the most common way to iterate over arrays of objects** is using the `forEach` method. This method executes a provided function once for each array element, making it more convenient and readable for such tasks.
+
+```js
+const users = [
+    { name: 'John', age: 30 },
+    { name: 'Jane', age: 25 },
+    { name: 'Jim', age: 35 }
+];
+
+users.forEach(user => {
+    console.log(`${user.name} is ${user.age} years old.`);
+});
+```
+
+#### while (traditional while loop)
+
+The `while` loop repeats a block of code as long as a specified condition is true.
+
+```js
+let i = 0;
+while (i > 0.5) {
+    console.log(i);
+    i = Math.rand();
+}
+console.log(`Found a rand number greater than 0.5: ${i}`);
+```
+
+## **6. Native JavaScript Objects** 
+
+JavaScript provides several built-in objects that allow developers to work with different data types, perform common tasks, manipulate the DOM and handle errors. These objects are part of the JavaScript language and are available globally.
+
+![Native Objects](img/native_objects.png)
+
+JavaScript native objects can be categorized into two types based on their usage context and origin:
+
+#### Browser-Independent Objects (Available also in Node.js)
+
+These objects are part of the JavaScript language specification and can be used in both browser and server-side environments (like Node.js). They typically start with an uppercase letter:
+
+- **Math**: Provides mathematical constants and functions.
+- **Number**: Represents numerical values and provides methods for numeric operations.
+- **Date**: Represents dates and times.
+- **Array**: Represents a list-like collection of elements.
+
+These objects are implemented as part of the JavaScript language itself and do not rely on the presence of a browser environment.
+
+#### Browser-Dependent Objects (Client-Side Environment)
+
+These objects are specific to the browser environment and are not available in server-side JavaScript (Node.js). They typically start with a lowercase letter:
+
+- **window**: Represents the global browser window and acts as the global object in client-side JavaScript.
+- **document**: Represents the HTML document loaded in the browser window.
+- **navigator**: Provides information about the client's browser and operating system.
+- **localStorage / sessionStorage**: Provides storage mechanisms within the browser for persisting data.
+
+These objects interact directly with the browser's Document Object Model (DOM) and are essential for client-side scripting and web application development.
+
+#### Usage Contexts
+
+- **Node.js**: Browser-independent objects (e.g., Math, Number, Date) can be used in Node.js applications without any dependency on a browser environment.
+- **Browser**: Browser-dependent objects (e.g., window, document, navigator) are specific to the client-side environment and require a web browser for execution.
+
+We are going to explain the most useful for us for the scope of this course.
+
+### **6.1 [Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)**
+
+- The Date object in JavaScript is used for working with dates and times. 
+- It allows you to create and manipulate dates, get and set various date components (like year, month, day, hour, minute, second), and perform operations such as formatting and arithmetic.
+- Internally, the number of milliseconds since 00:00:00 UTC on January 1, 1970, is stored.
+  
+Constructor: 
+
+```js
+let currentDate = new Date();               // Current date and hour
+let specificDate = new Date(1626176282855); // Example with number of millisecons
+let customDate = new Date(2023, 5, 12, 14, 30, 0, 0); // June 12, 2023, 14:30:00
+
+```
+
+#### **getFullYear(), getMonth(), getDate(), getDay(), getHours(), getMinutes(), getSeconds(), getMilliseconds():** Retrieve various components of the date.
+
+```js
+let now = new Date();
+let year = now.getFullYear();
+let month = now.getMonth(); // 0-indexed (January is 0)
+let day = now.getDate();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+let seconds = now.getSeconds();
+```
+
+#### **setFullYear(), setMonth(), setDate(), setHours(), setMinutes(), setSeconds(), setMilliseconds()**: Set various components of the date.
+
+```js
+day = new Date(2000, 0, 1); // January 1, 2000
+birthday.setFullYear(2001); // Change year to 2001
+```
+
+#### **toDateString(), toISOString(), toLocaleDateString(), toLocaleTimeString()**: Convert date objects to different string representations.
+
+```js
+let today = new Date();
+let dateString = today.toDateString(); // "Tue Jul 13 2024"
+let isoString = today.toISOString(); // "2024-07-13T12:30:00.000Z"
+let localeDateString = today.toLocaleDateString(); // Depends on locale
+```
+
+#### Working with dates
+
+Here's an example that demonstrates creating a `Date` object, accessing its components, and formatting its output:
+
+```js
+let now = new Date();
+
+let year = now.getFullYear();
+let month = now.getMonth(); // 0-indexed (July is 6)
+let day = now.getDate();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+let seconds = now.getSeconds();
+
+console.log(`Current date and time: ${day}/${month + 1}/${year} ${hours}:${minutes}:${seconds}`);
+```
+
+Here's the example in JavaScript comparing two dates:
+
+```js
+// Create two dates
+let date1 = new Date('2023-07-13');
+let date2 = new Date('2023-07-14');
+
+// Compare the dates
+if (date1 < date2) {
+    console.log(`${date1.toDateString()} is before ${date2.toDateString()}`);
+} else if (date1 > date2) {
+    console.log(`${date1.toDateString()} is after ${date2.toDateString()}`);
+} else {
+    console.log(`${date1.toDateString()} and ${date2.toDateString()} are equal`);
+}
+```
+
+### [**6.2 Math Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+
+The Math object in JavaScript provides mathematical constants and functions, allowing you to perform mathematical tasks without explicitly creating a Math object instance. It includes methods for rounding, trigonometry, logarithms, exponentiation, some constants as PI number, and more.
+
+- `Math.abs()`: Absolute value
+- `Math.ceil()`: Round up
+- `Math.floor()`: Round down
+- `Math.round()`: Round to nearest integer
+- `Math.max()`: Maximum value
+- `Math.min()`: Minimum value
+- `Math.random()`: Random number between 0 and 1
+- `Math.sqrt()`: Square root
+- `Math.PI`: PI number
+
+```js
+let absoluteValue = Math.abs(-5);  // 5
+let roundedUp = Math.ceil(4.2);  // 5
+let roundedDown = Math.floor(4.8);  // 4
+let rounded = Math.round(4.5);  // 5
+let roundedDownExample = Math.round(4.4);  // 4
+let max = Math.max(1, 2, 3);  // 3
+let min = Math.min(1, 2, 3);  // 1
+let random = Math.random();  // e.g., 0.543
+let squareRoot = Math.sqrt(16);  // 4
+
+// Also Math object contains some useful constants as PI or E number
+let piNumber = Math.PI;  // 3.1415......
+```
+
+### [**6.4 String Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+The String object is a wrapper around JavaScript's primitive string data type. It provides various methods and properties to work with strings effectively.
+
+#### Creating String Objects
+In JavaScript, you can create a string primitive directly or use the String object constructor to create a String object:
+
+```javascript
+// String primitive
+let message = 'Hello, World!';
+
+// Using String object constructor
+let anotherMessage = new String('Hello, World!');
+```
+
+#### Useful Methods and properties
+
+- `length`: Returns the length of the string.
+- `charAt(index)`: Returns the character at the specified index.
+- `concat(str1, str2, ...)`: Concatenates one or more strings to the end of the calling string and returns a new string.
+- `toUpperCase()`: Converts all characters to uppercase.
+- `toLowerCase()`: Converts all characters to lowercase.
+- `indexOf(searchValue, startIndex)`: Returns the index of the first occurrence of `searchValue` in the string, starting the search at `startIndex`.
+- `substring(startIndex, endIndex)`: Returns a new substring from `startIndex` to `endIndex` (excluding `endIndex`).
+- `slice(startIndex, endIndex)`: Extracts a section of the string and returns it as a new string.
+- `split(separator)`: Splits the string into an array of substrings based on a specified `separator`.
+
+Examples of use:
+
+Those methods already have been used in the [String Primitive Data Type](#42-string-type)
+
+### **6.5 Browser Interaction Objects**
+
+In addition to those presented earlier, there are other types of objects that allow manipulation of browser-specific features:
+
+- **navigator**: Provides information about the client's browser and operating system.
+- **screen**: Represents the properties of the user's screen.
+- **window**: Represents the global browser window and acts as the global object in client-side JavaScript.
+- **document**: Represents the HTML document loaded in the browser window.
+- **history**: Provides the browser's session history (pages visited in the current tab/window).
+
+#### [navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator)
+
+To identify the characteristics of the platform where a web application is running, you can use properties and methods provided by the `navigator` object in JavaScript:
+
+1. **Type of Browser and Version**:
+      - Use `navigator.userAgent` to obtain the User-Agent string, which includes information about the browser type and version.
+
+2. **Operating System**:
+      - Use `navigator.platform` to retrieve the platform on which the browser is executing (e.g., "Win32", "Linux x86_64", "MacIntel").
+
+3. **Geolocation**:
+      - Utilize the Geolocation API to request and obtain the device's current geographical location, provided the user grants permission.
+
+   Example JavaScript code:
+```javascript
+// User Agent
+let browserInfo = navigator.userAgent;
+console.log(`User-Agent: ${browserInfo}`);
+
+// Platform Info
+let platformInfo = navigator.platform;
+console.log(`Platform: ${platformInfo}`);
+
+// Geolocation
+if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(position => {
+      console.log('Latitude:', position.coords.latitude);
+      console.log('Longitude:', position.coords.longitude);
+    }, error => {
+        console.error('Error getting geolocation:', error);
+    });
+} else {
+    console.error('Geolocation is not supported by this browser.');
+}
+```
+
+#### [screen](https://developer.mozilla.org/en-US/docs/Web/API/Window/screen) 
+
+
+The `screen` object in JavaScript represents the user's screen and provides read-only properties to retrieve information about its characteristics.
+
+#### Properties of the `screen` Object
+
+- **`screen.width`**: Returns the width of the user's screen in pixels.
+- **`screen.height`**: Returns the height of the user's screen in pixels.
+- **`screen.availWidth`**: Returns the available width of the user's screen (excluding operating system taskbars, etc.) in pixels.
+- **`screen.availHeight`**: Returns the available height of the user's screen (excluding operating system taskbars, etc.) in pixels.
+- **`screen.colorDepth`**: Returns the bit depth of the color palette for displaying images on the user's screen.
+- **`screen.pixelDepth`**: Returns the bit depth of the pixel buffer of the user's screen.
+
+These properties allow web applications to adapt their content or behavior based on the user's screen dimensions and capabilities, enhancing the user experience.
+
+Here's a simple example demonstrating how to access and use some of these properties in JavaScript:
+
+```javascript
+console.log(`Screen width: ${screen.width}px`);
+console.log(`Screen height: ${screen.height}px`);
+console.log(`Available screen width: ${screen.availWidth}px`);
+console.log(`Available screen height: ${screen.availHeight}px`);
+console.log(`Color depth: ${screen.colorDepth} bits`);
+console.log(`Pixel depth: ${screen.pixelDepth} bits`);
+```
+
+#### [window](https://developer.mozilla.org/en-US/docs/Web/API/Window)
+
+The `window` object is considered one of the most important objects in JavaScript for several reasons:
+
+- **Window Management**: It allows for managing browser windows and provides methods to manipulate and interact with them.
+
+- **Implicit Object**: The `window` object is implicit, meaning you don't need to explicitly reference it to access objects and properties nested within its hierarchy. For example, `window.document` directly refers to the `document` object without explicitly stating `window`.
+
+
+#### [document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
+The `document` object in JavaScript represents the current web page loaded in the browser window. It provides access to the DOM (Document Object Model) of the page, allowing developers to manipulate its content, structure, and styles dynamically.
+
+#### Key Features of the `document` Object:
+
+- **DOM Manipulation**: Developers can access and modify elements within the web page using methods like `getElementById`, `querySelector`, and properties like `textContent`, `innerHTML`.
+
+- **Event Handling**: Enables attaching event listeners to elements and responding to user interactions or other events on the page.
+
+- **Dynamic Updates**: Allows scripts to dynamically update the content of the page based on user input, server responses, or other conditions.
+
+##### Example of DOM Manipulation:
+
+```javascript
+// Accessing an element by its ID and changing its content
+const headerElement = document.getElementById('header');
+headerElement.textContent = 'Welcome to our Website!';
+```
+
+#### [history](https://developer.mozilla.org/en-US/docs/Web/API/History)
+
+In JavaScript, the `history` object provides methods and properties to navigate through the user's browsing history. It allows storing references to visited web pages and facilitates navigation between them using a list-like structure.
+
+##### Key Features of the `history` Object:
+
+- **`history.length`**: Returns the number of entries in the browsing history stack.
+
+- **`history.back()`**: Moves back one page in the session history. Equivalent to clicking the browser's back button.
+
+- **`history.forward()`**: Moves forward one page in the session history. Equivalent to clicking the browser's forward button.
+
+- **`history.go(n)`**: Loads a specific page from the session history, where `n` can be a positive or negative integer. Negative values move backwards, and positive values move forwards.
+
+##### Example Usage:
+
+```javascript
+// Navigating back and forward in history
+function goBack() {
+    window.history.back();
+}
+
+function goForward() {
+    window.history.forward();
+}
+
+// Accessing the length of the history stack
+let historyLength = window.history.length;
+console.log(`Number of pages in history: ${historyLength}`);
+```
+
+## 6. Functions
+
+### 6.1 
+
+
 
