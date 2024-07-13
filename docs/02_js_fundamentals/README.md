@@ -1,4 +1,4 @@
-# **UNIT2 - JS Fundamentals**
+# **UNIT2 - JavaScript Fundamentals**
 
 
 ## **1. General Syntax of JavaScript**
@@ -801,7 +801,7 @@ if (date1 < date2) {
 }
 ```
 
-### [**6.2 Math Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+### **6.2 [Math Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)**
 
 The Math object in JavaScript provides mathematical constants and functions, allowing you to perform mathematical tasks without explicitly creating a Math object instance. It includes methods for rounding, trigonometry, logarithms, exponentiation, some constants as PI number, and more.
 
@@ -993,9 +993,300 @@ let historyLength = window.history.length;
 console.log(`Number of pages in history: ${historyLength}`);
 ```
 
-## 6. Functions
+## **7. Functions**
 
-### 6.1 
+A function in programming is a reusable block of code that performs a specific task. It can take inputs, process them, and return an output. Functions are fundamental building blocks in programming, allowing for modular, readable, and maintainable code.
+
+#### Key Characteristics of Functions:
+
+1. **Modularity**: Functions allow code to be divided into smaller, manageable pieces, each performing a specific task.
+2. **Reusability**: Once defined, a function can be called multiple times within a program, reducing redundancy.
+3. **Abstraction**: Functions enable the encapsulation of complex operations, hiding the details and exposing only necessary interfaces.
+4. **Maintainability**: Functions make it easier to update and manage code. Changes made within a function do not affect other parts of the code that rely on it.
+
+#### Basic Structure of a Function:
+
+1. **Function Declaration**: Defines the function and specifies its name, parameters, and body.
+2. **Function Call**: Executes the function by referencing its name and passing any required arguments. Optionally we can save the value that is returned by the function. 
+
+#### Example in JavaScript:
+
+Note that in Javascript we don't declare the type of the parameters and the return.
+
+```javascript
+// Function Declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function Call
+let message = greet('Alice');
+console.log(message); // Output: Hello, Alice!
+```
+
+### **7.1 Global Functions in JavaScript**
+
+Global functions in JavaScript are built-in functions that are part of the global object and can be called from anywhere in your code. They are available in both the browser and Node.js environments. Here are some of the most commonly used global functions:
+
+1. **`parseInt(string, radix)`**
+      - Parses a string and returns an integer of the specified radix (base).
+      - Example:
+     ```javascript
+     let num = parseInt("10", 10); // 10
+     ```
+
+2. **`parseFloat(string)`**
+      - Parses a string and returns a floating-point number.
+      - Example:
+        ```javascript
+        let num = parseFloat("10.5"); // 10.5
+        ```
+
+3. **`isNaN(value)`**
+      - Determines whether a value is NaN (Not-a-Number).
+      - Example:
+        ```javascript
+        let result = isNaN("hello"); // true
+        ```
+
+4. **`isFinite(value)`**
+      - Determines whether a value is a finite number.
+      - Example:
+        ```javascript
+        let result = isFinite(10); // true
+        let result2 = isFinite(Infinity); // false
+        ```
+
+5. **`eval(string)`**
+      - Evaluates JavaScript code represented as a string.
+      - Example:
+        ```javascript
+        let result = eval("2 + 2"); // 4
+        ```
+
+6. **`encodeURI(uri)`**
+      - Encodes a Uniform Resource Identifier (URI) by escaping certain characters.
+      - Example:
+        ```javascript
+        let uri = "https://www.example.com?name=John Doe";
+        let encodedURI = encodeURI(uri); // "https://www.example.com?name=John%20Doe"
+        ```
+
+7. **`encodeURIComponent(uriComponent)`**
+      - Encodes a URI component by escaping certain characters.
+      - Example:
+        ```javascript
+        let uriComponent = "John Doe & Co";
+        let encodedURIComponent = encodeURIComponent(uriComponent); // "John%20Doe%20%26%20Co"
+        ```
+
+8. **`decodeURI(encodedURI)`**
+      - Decodes a Uniform Resource Identifier (URI) created by `encodeURI`.
+      - Example:
+        ```javascript
+        let encodedURI = "https://www.example.com?name=John%20Doe";
+        let decodedURI = decodeURI(encodedURI); // "https://www.example.com?name=John Doe"
+        ```
+
+9. **`decodeURIComponent(encodedURIComponent)`**
+      - Decodes a URI component created by `encodeURIComponent`.
+      - Example:
+        ```javascript
+        let encodedURIComponent = "John%20Doe%20%26%20Co";
+        let decodedURIComponent = decodeURIComponent(encodedURIComponent); // "John Doe & Co"
+        ```
+
+10. **`setTimeout(function, delay)`**
+      - Calls a function or evaluates an expression after a specified number of milliseconds.
+      - Example:
+          ```javascript
+          setTimeout(function() {
+              console.log("Hello after 2 seconds");
+          }, 2000);
+          ```
+
+11. **`setInterval(function, delay)`**
+      - Repeatedly calls a function or evaluates an expression at specified intervals (in milliseconds).
+      - Example:
+          ```javascript
+          setInterval(function() {
+              console.log("Hello every 2 seconds");
+          }, 2000);
+          ```
+
+12. **`clearTimeout(timeoutID)`**
+      - Clears a timer set with `setTimeout`.
+      - Example:
+          ```javascript
+          let timeoutID = setTimeout(function() {
+              console.log("This won't run");
+          }, 2000);
+          clearTimeout(timeoutID);
+          ```
+
+13. **`clearInterval(intervalID)`**
+      - Clears a timer set with `setInterval`.
+      - Example:
+          ```javascript
+          let intervalID = setInterval(function() {
+              console.log("This won't run repeatedly");
+          }, 2000);
+          clearInterval(intervalID);
+          ```
+
+### **7.2 Declaring User Functions**
+
+It is possible to create custom functions in JavaScript, different from the predefined functions provided by the language. There are two types of function declarations:
+
+1. **Classical Function Declaration using the `function` Keyword**
+2. **Function by Expression (Lambda)**
+3. **Arrow Functions (introduced in ES6)**
+
+#### Classical Function Declaration
+
+The classical way to define a function in JavaScript is by using the `function` keyword. This method allows you to create named or anonymous functions.
+
+Example:
+
+```javascript
+// Named function
+function add(a, b) {
+    return a + b;
+}
+
+// Function call
+let result = add(2, 3);
+console.log(result); // Output: 5
+```
+
+#### Function by Expression and Lambda function.
+
+You can asign a function to a variable by a expression.
+
+We can assing or pass as a parameter an anonymous function. We call this a Lambda function.
+
+
+```js
+// 1. Function by expression
+const multiply = function multiplication(a, b) {
+    return a * b;
+};
+
+// Calling the function
+let result = multiply(5, 3);
+console.log(result); // Output: 15
+
+// 2. Lambda or anonymous function by expression
+// this second options has more sense
+const divide = function (a,b) {
+    return a / b;
+}
+
+// We call exactly the same
+let resultDiv = divide(15, 3);
+console.log(resultDiv); // Output: 5
+
+```
+
+#### Arrow Functions (Lambda)
+
+Arrow functions provide a more concise syntax to write functions in JavaScript. They are anonymous (also called Lambda) and are often used in place of function expressions.
+
+```js
+// Traditional Function
+const f1 = function (a) {
+  return a + 100;
+}
+
+// Breakdown of the Arrow Function
+
+// 1. Remove the "function" keyword and place the arrow between the argument and the opening brace.
+const f2 = (a) => {
+  return a + 100;
+}
+
+// 2. Remove the braces of the body and the "return" keyword — the return is implicit.
+const f3 = (a) => a + 100;
+
+// 3. Omit the parentheses around the argument
+const f4 = a => a + 100;
+```
+<div class="exercise-box">
+    <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Calculate Days Between Two Dates</h3>
+    <p>Write a JavaScript function that calculates the number of days between two given dates.</p>
+    <h4>Instructions:</h4>
+    <ol>
+        <li>Create a function <code>calculateDaysBetweenDates(date1, date2)</code> that takes two date strings as input.</li>
+        <li>Parse the date strings into <code>Date</code> objects.</li>
+        <li>Calculate the difference in milliseconds between the two dates.</li>
+        <li>Convert the difference in milliseconds to days.</li>
+        <li>Return the number of days between the two dates.</li>
+    </ol>
+    <h4>Example Usage:</h4>
+    <pre><code>let date1 = "2024-07-01";
+let date2 = "2024-07-13";
+let daysBetween = calculateDaysBetweenDates(date1, date2);
+console.log(`There are ${daysBetween} days between ${date1} and ${date2}.`); // Output: There are 12 days between 2024-07-01 and 2024-07-13.</code></pre>
+    <h4>Hints:</h4>
+    <ul>
+        <li>Use <code>new Date(dateString)</code> to create <code>Date</code> objects from the date strings.</li>
+        <li>Subtract the earlier date from the later date to get the difference in milliseconds.</li>
+        <li>There are <code>1000 * 60 * 60 * 24</code> milliseconds in a day.</li>
+    </ul>
+</div>
+
+### **7.3 Callback Functions**
+
+At a high level, a callback is when a function B is passed as a parameter to another function A. This allows function A to invoke (or "call back") function B at a later time, typically in response to some event or condition.
+
+#### Key Points:
+
+- **Flexibility**: Callbacks provide a way to specify custom behavior that should be executed when an action is completed or an event occurs.
+- **Asynchronous Operations**: They are commonly used in asynchronous programming to handle operations that take time to complete, such as fetching data from a server.
+- **External Definition**: Callback functions are defined outside of the function that uses them, allowing for modular and reusable code.
+
+##### Example Concept:
+
+```javascript
+// Function A takes function B as a callback parameter
+function A(callback) {
+    // Function A's logic
+    console.log("Inside function A");
+    
+    // Invoke the callback function B
+    callback();
+}
+
+// Function B (callback function)
+function B() {
+    console.log("Callback function B executed");
+}
+
+// Call function A and pass function B as a callback
+A(B);
+```
+#### Ad-hoc callback functions
+
+In JavaScript, ad-hoc callback functions are functions that are defined inline at the moment they are passed as arguments to another function. The `forEach` method is a good example where ad-hoc callbacks are frequently used to iterate over arrays.
+
+##### Example Using `forEach`:
+
+```javascript
+// Array of numbers
+const numbers = [1, 2, 3, 4, 5];
+
+// Using forEach with an ad-hoc callback function
+numbers.forEach(function(item) {
+    console.log(item); // Show each number
+});
+
+
+// Using forEach with an ad-hoc callback arrow function
+numbers.forEach( item => {
+    console.log(item * 2); // Show each number multiplied by 2
+});
+```
+
 
 
 

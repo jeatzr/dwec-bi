@@ -280,8 +280,6 @@ These tools are essential in modern web development, helping maintain code quali
 
 **Some jokes :)** [Framework war Meme](img/meme2.jpg) - [jQuery meme](img/jquery_meme.jpg) 
 
-
-
 <div class="exercise-box">
 <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise 1.1</h3>
 <p>Take a look on <a href="https://stateofjs.com/en-US">State Of JS</a> and comment. </p>
