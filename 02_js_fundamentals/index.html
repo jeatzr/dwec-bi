@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unit2-js-fundamentals" class="md-skip">
+        <a href="#unit2-javascript-fundamentals" class="md-skip">
           Skip to content
         </a>
       
@@ -511,19 +511,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-functions" class="md-nav__link">
+  <a href="#7-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Functions
+      7. Functions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Functions">
+    <nav class="md-nav" aria-label="7. Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
+  <a href="#71-global-functions-in-javascript" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1
+      7.1 Global Functions in JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-declaring-user-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Declaring User Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-callback-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Callback Functions
     </span>
   </a>
   
@@ -855,19 +873,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-functions" class="md-nav__link">
+  <a href="#7-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Functions
+      7. Functions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Functions">
+    <nav class="md-nav" aria-label="7. Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
+  <a href="#71-global-functions-in-javascript" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1
+      7.1 Global Functions in JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-declaring-user-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Declaring User Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-callback-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Callback Functions
     </span>
   </a>
   
@@ -893,7 +929,7 @@
                   
 
 
-<h1 id="unit2-js-fundamentals"><strong>UNIT2 - JS Fundamentals</strong></h1>
+<h1 id="unit2-javascript-fundamentals"><strong>UNIT2 - JavaScript Fundamentals</strong></h1>
 <h2 id="1-general-syntax-of-javascript"><strong>1. General Syntax of JavaScript</strong></h2>
 <h4 id="ecmascript-syntax">ECMAScript Syntax</h4>
 <p>JavaScript, also known as ECMAScript, has a syntax similar to languages like C++ and Java.</p>
@@ -1578,7 +1614,7 @@ When the code execution reaches the debugger statement, it will pause, allowing 
 </span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">date1</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()</span><span class="si">}</span><span class="sb"> and </span><span class="si">${</span><span class="nx">date2</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">()</span><span class="si">}</span><span class="sb"> are equal`</span><span class="p">);</span>
 </span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="62-math-object"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math"><strong>6.2 Math Object</strong></a></h3>
+<h3 id="62-math-object"><strong>6.2 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math Object</a></strong></h3>
 <p>The Math object in JavaScript provides mathematical constants and functions, allowing you to perform mathematical tasks without explicitly creating a Math object instance. It includes methods for rounding, trigonometry, logarithms, exponentiation, some constants as PI number, and more.</p>
 <ul>
 <li><code>Math.abs()</code>: Absolute value</li>
@@ -1760,8 +1796,295 @@ When the code execution reaches the debugger statement, it will pause, allowing 
 </span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="kd">let</span><span class="w"> </span><span class="nx">historyLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 </span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Number of pages in history: </span><span class="si">${</span><span class="nx">historyLength</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="6-functions">6. Functions</h2>
-<h3 id="61">6.1</h3>
+<h2 id="7-functions"><strong>7. Functions</strong></h2>
+<p>A function in programming is a reusable block of code that performs a specific task. It can take inputs, process them, and return an output. Functions are fundamental building blocks in programming, allowing for modular, readable, and maintainable code.</p>
+<h4 id="key-characteristics-of-functions">Key Characteristics of Functions:</h4>
+<ol>
+<li><strong>Modularity</strong>: Functions allow code to be divided into smaller, manageable pieces, each performing a specific task.</li>
+<li><strong>Reusability</strong>: Once defined, a function can be called multiple times within a program, reducing redundancy.</li>
+<li><strong>Abstraction</strong>: Functions enable the encapsulation of complex operations, hiding the details and exposing only necessary interfaces.</li>
+<li><strong>Maintainability</strong>: Functions make it easier to update and manage code. Changes made within a function do not affect other parts of the code that rely on it.</li>
+</ol>
+<h4 id="basic-structure-of-a-function">Basic Structure of a Function:</h4>
+<ol>
+<li><strong>Function Declaration</strong>: Defines the function and specifies its name, parameters, and body.</li>
+<li><strong>Function Call</strong>: Executes the function by referencing its name and passing any required arguments. Optionally we can save the value that is returned by the function. </li>
+</ol>
+<h4 id="example-in-javascript">Example in JavaScript:</h4>
+<p>Note that in Javascript we don't declare the type of the parameters and the return.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1">// Function Declaration</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="p">}</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="c1">// Function Call</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">);</span>
+</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Hello, Alice!</span>
+</span></code></pre></div>
+<h3 id="71-global-functions-in-javascript"><strong>7.1 Global Functions in JavaScript</strong></h3>
+<p>Global functions in JavaScript are built-in functions that are part of the global object and can be called from anywhere in your code. They are available in both the browser and Node.js environments. Here are some of the most commonly used global functions:</p>
+<ol>
+<li>
+<p><strong><code>parseInt(string, radix)</code></strong></p>
+<ul>
+<li>Parses a string and returns an integer of the specified radix (base).</li>
+<li>Example:
+ <div class="language-javascript highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>parseFloat(string)</code></strong></p>
+<ul>
+<li>Parses a string and returns a floating-point number.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;10.5&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10.5</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>isNaN(value)</code></strong></p>
+<ul>
+<li>Determines whether a value is NaN (Not-a-Number).</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>isFinite(value)</code></strong></p>
+<ul>
+<li>Determines whether a value is a finite number.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>eval(string)</code></strong></p>
+<ul>
+<li>Evaluates JavaScript code represented as a string.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;2 + 2&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>encodeURI(uri)</code></strong></p>
+<ul>
+<li>Encodes a Uniform Resource Identifier (URI) by escaping certain characters.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.example.com?name=John Doe&quot;</span><span class="p">;</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">encodedURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">encodeURI</span><span class="p">(</span><span class="nx">uri</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;https://www.example.com?name=John%20Doe&quot;</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>encodeURIComponent(uriComponent)</code></strong></p>
+<ul>
+<li>Encodes a URI component by escaping certain characters.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">uriComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John Doe &amp; Co&quot;</span><span class="p">;</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">encodedURIComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">uriComponent</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;John%20Doe%20%26%20Co&quot;</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>decodeURI(encodedURI)</code></strong></p>
+<ul>
+<li>Decodes a Uniform Resource Identifier (URI) created by <code>encodeURI</code>.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">encodedURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.example.com?name=John%20Doe&quot;</span><span class="p">;</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">decodedURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">decodeURI</span><span class="p">(</span><span class="nx">encodedURI</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;https://www.example.com?name=John Doe&quot;</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>decodeURIComponent(encodedURIComponent)</code></strong></p>
+<ul>
+<li>Decodes a URI component created by <code>encodeURIComponent</code>.</li>
+<li>Example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">encodedURIComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;John%20Doe%20%26%20Co&quot;</span><span class="p">;</span>
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">decodedURIComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">encodedURIComponent</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;John Doe &amp; Co&quot;</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>setTimeout(function, delay)</code></strong></p>
+<ul>
+<li>Calls a function or evaluates an expression after a specified number of milliseconds.</li>
+<li>Example:
+      <div class="language-javascript highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello after 2 seconds&quot;</span><span class="p">);</span>
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>setInterval(function, delay)</code></strong></p>
+<ul>
+<li>Repeatedly calls a function or evaluates an expression at specified intervals (in milliseconds).</li>
+<li>Example:
+      <div class="language-javascript highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello every 2 seconds&quot;</span><span class="p">);</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>clearTimeout(timeoutID)</code></strong></p>
+<ul>
+<li>Clears a timer set with <code>setTimeout</code>.</li>
+<li>Example:
+      <div class="language-javascript highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">timeoutID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This won&#39;t run&quot;</span><span class="p">);</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeoutID</span><span class="p">);</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>clearInterval(intervalID)</code></strong></p>
+<ul>
+<li>Clears a timer set with <code>setInterval</code>.</li>
+<li>Example:
+      <div class="language-javascript highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">intervalID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This won&#39;t run repeatedly&quot;</span><span class="p">);</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalID</span><span class="p">);</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="72-declaring-user-functions"><strong>7.2 Declaring User Functions</strong></h3>
+<p>It is possible to create custom functions in JavaScript, different from the predefined functions provided by the language. There are two types of function declarations:</p>
+<ol>
+<li><strong>Classical Function Declaration using the <code>function</code> Keyword</strong></li>
+<li><strong>Function by Expression (Lambda)</strong></li>
+<li><strong>Arrow Functions (introduced in ES6)</strong></li>
+</ol>
+<h4 id="classical-function-declaration">Classical Function Declaration</h4>
+<p>The classical way to define a function in JavaScript is by using the <code>function</code> keyword. This method allows you to create named or anonymous functions.</p>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c1">// Named function</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="p">}</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>
+</span><span id="__span-61-6"><a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="c1">// Function call</span>
+</span><span id="__span-61-7"><a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-61-8"><a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 5</span>
+</span></code></pre></div>
+<h4 id="function-by-expression-and-lambda-function">Function by Expression and Lambda function.</h4>
+<p>You can asign a function to a variable by a expression.</p>
+<p>We can assing or pass as a parameter an anonymous function. We call this a Lambda function.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="c1">// 1. Function by expression</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">multiplication</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="p">};</span>
+</span><span id="__span-62-5"><a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>
+</span><span id="__span-62-6"><a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a><span class="c1">// Calling the function</span>
+</span><span id="__span-62-7"><a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">multiply</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-62-8"><a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 15</span>
+</span><span id="__span-62-9"><a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a>
+</span><span id="__span-62-10"><a id="__codelineno-62-10" name="__codelineno-62-10" href="#__codelineno-62-10"></a><span class="c1">// 2. Lambda or anonymous function by expression</span>
+</span><span id="__span-62-11"><a id="__codelineno-62-11" name="__codelineno-62-11" href="#__codelineno-62-11"></a><span class="c1">// this second options has more sense</span>
+</span><span id="__span-62-12"><a id="__codelineno-62-12" name="__codelineno-62-12" href="#__codelineno-62-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">divide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-62-13"><a id="__codelineno-62-13" name="__codelineno-62-13" href="#__codelineno-62-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-62-14"><a id="__codelineno-62-14" name="__codelineno-62-14" href="#__codelineno-62-14"></a><span class="p">}</span>
+</span><span id="__span-62-15"><a id="__codelineno-62-15" name="__codelineno-62-15" href="#__codelineno-62-15"></a>
+</span><span id="__span-62-16"><a id="__codelineno-62-16" name="__codelineno-62-16" href="#__codelineno-62-16"></a><span class="c1">// We call exactly the same</span>
+</span><span id="__span-62-17"><a id="__codelineno-62-17" name="__codelineno-62-17" href="#__codelineno-62-17"></a><span class="kd">let</span><span class="w"> </span><span class="nx">resultDiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-62-18"><a id="__codelineno-62-18" name="__codelineno-62-18" href="#__codelineno-62-18"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultDiv</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 5</span>
+</span></code></pre></div>
+<h4 id="arrow-functions-lambda">Arrow Functions (Lambda)</h4>
+<p>Arrow functions provide a more concise syntax to write functions in JavaScript. They are anonymous (also called Lambda) and are often used in place of function expressions.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="c1">// Traditional Function</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+</span><span id="__span-63-4"><a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="p">}</span>
+</span><span id="__span-63-5"><a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a>
+</span><span id="__span-63-6"><a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a><span class="c1">// Breakdown of the Arrow Function</span>
+</span><span id="__span-63-7"><a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a>
+</span><span id="__span-63-8"><a id="__codelineno-63-8" name="__codelineno-63-8" href="#__codelineno-63-8"></a><span class="c1">// 1. Remove the &quot;function&quot; keyword and place the arrow between the argument and the opening brace.</span>
+</span><span id="__span-63-9"><a id="__codelineno-63-9" name="__codelineno-63-9" href="#__codelineno-63-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">f2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-63-10"><a id="__codelineno-63-10" name="__codelineno-63-10" href="#__codelineno-63-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+</span><span id="__span-63-11"><a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a><span class="p">}</span>
+</span><span id="__span-63-12"><a id="__codelineno-63-12" name="__codelineno-63-12" href="#__codelineno-63-12"></a>
+</span><span id="__span-63-13"><a id="__codelineno-63-13" name="__codelineno-63-13" href="#__codelineno-63-13"></a><span class="c1">// 2. Remove the braces of the body and the &quot;return&quot; keyword — the return is implicit.</span>
+</span><span id="__span-63-14"><a id="__codelineno-63-14" name="__codelineno-63-14" href="#__codelineno-63-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">f3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+</span><span id="__span-63-15"><a id="__codelineno-63-15" name="__codelineno-63-15" href="#__codelineno-63-15"></a>
+</span><span id="__span-63-16"><a id="__codelineno-63-16" name="__codelineno-63-16" href="#__codelineno-63-16"></a><span class="c1">// 3. Omit the parentheses around the argument</span>
+</span><span id="__span-63-17"><a id="__codelineno-63-17" name="__codelineno-63-17" href="#__codelineno-63-17"></a><span class="kd">const</span><span class="w"> </span><span class="nx">f4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="exercise-box">
+    <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Calculate Days Between Two Dates</h3>
+    <p>Write a JavaScript function that calculates the number of days between two given dates.</p>
+    <h4>Instructions:</h4>
+    <ol>
+        <li>Create a function <code>calculateDaysBetweenDates(date1, date2)</code> that takes two date strings as input.</li>
+        <li>Parse the date strings into <code>Date</code> objects.</li>
+        <li>Calculate the difference in milliseconds between the two dates.</li>
+        <li>Convert the difference in milliseconds to days.</li>
+        <li>Return the number of days between the two dates.</li>
+    </ol>
+    <h4>Example Usage:</h4>
+    <pre><code>let date1 = "2024-07-01";
+let date2 = "2024-07-13";
+let daysBetween = calculateDaysBetweenDates(date1, date2);
+console.log(`There are ${daysBetween} days between ${date1} and ${date2}.`); // Output: There are 12 days between 2024-07-01 and 2024-07-13.</code></pre>
+    <h4>Hints:</h4>
+    <ul>
+        <li>Use <code>new Date(dateString)</code> to create <code>Date</code> objects from the date strings.</li>
+        <li>Subtract the earlier date from the later date to get the difference in milliseconds.</li>
+        <li>There are <code>1000 * 60 * 60 * 24</code> milliseconds in a day.</li>
+    </ul>
+</div>
+
+<h3 id="73-callback-functions"><strong>7.3 Callback Functions</strong></h3>
+<p>At a high level, a callback is when a function B is passed as a parameter to another function A. This allows function A to invoke (or "call back") function B at a later time, typically in response to some event or condition.</p>
+<h4 id="key-points">Key Points:</h4>
+<ul>
+<li><strong>Flexibility</strong>: Callbacks provide a way to specify custom behavior that should be executed when an action is completed or an event occurs.</li>
+<li><strong>Asynchronous Operations</strong>: They are commonly used in asynchronous programming to handle operations that take time to complete, such as fetching data from a server.</li>
+<li><strong>External Definition</strong>: Callback functions are defined outside of the function that uses them, allowing for modular and reusable code.</li>
+</ul>
+<h5 id="example-concept">Example Concept:</h5>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="c1">// Function A takes function B as a callback parameter</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">A</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="w">    </span><span class="c1">// Function A&#39;s logic</span>
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Inside function A&quot;</span><span class="p">);</span>
+</span><span id="__span-64-5"><a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>
+</span><span id="__span-64-6"><a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a><span class="w">    </span><span class="c1">// Invoke the callback function B</span>
+</span><span id="__span-64-7"><a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a><span class="w">    </span><span class="nx">callback</span><span class="p">();</span>
+</span><span id="__span-64-8"><a id="__codelineno-64-8" name="__codelineno-64-8" href="#__codelineno-64-8"></a><span class="p">}</span>
+</span><span id="__span-64-9"><a id="__codelineno-64-9" name="__codelineno-64-9" href="#__codelineno-64-9"></a>
+</span><span id="__span-64-10"><a id="__codelineno-64-10" name="__codelineno-64-10" href="#__codelineno-64-10"></a><span class="c1">// Function B (callback function)</span>
+</span><span id="__span-64-11"><a id="__codelineno-64-11" name="__codelineno-64-11" href="#__codelineno-64-11"></a><span class="kd">function</span><span class="w"> </span><span class="nx">B</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-64-12"><a id="__codelineno-64-12" name="__codelineno-64-12" href="#__codelineno-64-12"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Callback function B executed&quot;</span><span class="p">);</span>
+</span><span id="__span-64-13"><a id="__codelineno-64-13" name="__codelineno-64-13" href="#__codelineno-64-13"></a><span class="p">}</span>
+</span><span id="__span-64-14"><a id="__codelineno-64-14" name="__codelineno-64-14" href="#__codelineno-64-14"></a>
+</span><span id="__span-64-15"><a id="__codelineno-64-15" name="__codelineno-64-15" href="#__codelineno-64-15"></a><span class="c1">// Call function A and pass function B as a callback</span>
+</span><span id="__span-64-16"><a id="__codelineno-64-16" name="__codelineno-64-16" href="#__codelineno-64-16"></a><span class="nx">A</span><span class="p">(</span><span class="nx">B</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="ad-hoc-callback-functions">Ad-hoc callback functions</h4>
+<p>In JavaScript, ad-hoc callback functions are functions that are defined inline at the moment they are passed as arguments to another function. The <code>forEach</code> method is a good example where ad-hoc callbacks are frequently used to iterate over arrays.</p>
+<h5 id="example-using-foreach">Example Using <code>forEach</code>:</h5>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="c1">// Array of numbers</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="c1">// Using forEach with an ad-hoc callback function</span>
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span><span class="w"> </span><span class="c1">// Show each number</span>
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a><span class="p">});</span>
+</span><span id="__span-65-8"><a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>
+</span><span id="__span-65-9"><a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>
+</span><span id="__span-65-10"><a id="__codelineno-65-10" name="__codelineno-65-10" href="#__codelineno-65-10"></a><span class="c1">// Using forEach with an ad-hoc callback arrow function</span>
+</span><span id="__span-65-11"><a id="__codelineno-65-11" name="__codelineno-65-11" href="#__codelineno-65-11"></a><span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-65-12"><a id="__codelineno-65-12" name="__codelineno-65-12" href="#__codelineno-65-12"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Show each number multiplied by 2</span>
+</span><span id="__span-65-13"><a id="__codelineno-65-13" name="__codelineno-65-13" href="#__codelineno-65-13"></a><span class="p">});</span>
+</span></code></pre></div>
 
 
 
