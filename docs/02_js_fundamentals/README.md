@@ -256,7 +256,6 @@ let power = 2 ** 3;  // 8
 let counter = 0;
 counter++;  // counter is now 1
 
-let counter = 1;
 counter--;  // counter is now 0
 ```
 

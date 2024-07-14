@@ -4,7 +4,7 @@ nav:
   - Home: index.md
   - U1 - Frontend Tools: 01_frontend_introduction/README.md
   - U2 - JS Fundamentals: 02_js_fundamentals/README.md
-  - U3 - Objects, Classes and Arrays: 03_objects_arrays/README.md
+  - U3 - Arrays, Objects, and Classes: 03_objects_arrays/README.md
   - U4 - Manipulating the DOM: 04_DOM/README.md
   - U5 - Events and Forms: 05_events_forms/README.md
   - U6 - AJAX: 06_AJAX/README.md

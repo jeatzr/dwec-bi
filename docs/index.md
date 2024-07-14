@@ -6,7 +6,7 @@ The contents have been divided into the following units:
 
 1. **[Introduction to Frontend Tools](01_frontend_introduction/README.md)**
 2. **[JS Fundamentals](02_js_fundamentals/README.md)**
-3. **[Objects, Classes and Arrays](03_objects_arrays/README.md)**
+3. **[Arrays, Objects, and Classes](03_objects_arrays/README.md)**
 4. **[Manipulating the DOM](04_DOM/README.md)**
 5. **[Event Management and Form Validation](05_events_forms/README.md)**
 6. **[AJAX](06_AJAX/README.md)**

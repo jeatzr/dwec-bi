@@ -170,7 +170,7 @@ Developers rely on browsers not only to view web pages but also for essential to
 
 ![Web Browsers](img/08_web_browsers.webp)
 
-### **5.3 **Version control tools****
+### **5.3 Version control tools**
 
 Version control tools are software systems that help manage changes to files, documents, or any collection of information over time. They are essential for tracking modifications made by individuals or teams, facilitating collaboration, and ensuring the integrity and traceability of project history. The tools we will use are:
 
