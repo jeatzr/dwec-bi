@@ -278,7 +278,9 @@ These tools are essential in modern web development, helping maintain code quali
 
 ![JS Evolution](img/JSEvol.png)
 
-**Some jokes :)** [Framework war Meme](img/meme2.jpg) - [jQuery meme](img/jquery_meme.jpg) 
+![fronted meme](img/fronted-meme.jpg)
+
+**Some other memes :)** [Framework war Meme](img/meme2.jpg) - [jQuery meme](img/jquery_meme.jpg) 
 
 <div class="exercise-box">
 <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise 1.1</h3>
