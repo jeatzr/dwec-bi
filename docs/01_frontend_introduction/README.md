@@ -31,8 +31,9 @@ The WWW relies on the Internet to function, but the Internet also supports many 
 ## **2. Web Architecture**
 
 The most common architecture is client/server. 
+ 
  - A **client** is a service consumer. The web browser on our device acts as a client. 
- - A **server** is one or more processes hosted on machines that provide these services."
+ - A **server** is one or more processes hosted on machines that provide the services consummed by the client. The most used service in WWW is HTTP. 
  
  ![Client/server Architecture](img/01_web_architecture.png)
 
@@ -79,6 +80,7 @@ We can write the logic of our page in Vanilla JS. But the complexity of projects
 - React
 - Vue
 - Svelte
+- Astro
 - Many more and many more to come.
   
 ![Frontend Frameworks](img/06_frontend_frameworks.png)
@@ -288,4 +290,115 @@ These tools are essential in modern web development, helping maintain code quali
 <p>Research different frameworks and select one that you would use to build a Single Page Application (SPA). State the reasons that convinced you.</p>
 </div>
 
-## [**6. Include JavaScript code.**](06_include_js.md)
+## **6. Include JavaScript code.**
+
+We have several ways to include  JavaScript code in our web page:
+
+1. **Internal JavaScript**
+   
+    You can include JavaScript within the `<head>` or `<body>` section of your HTML file using the `<script>` tag.
+    If you want to assure that the code is executed once the entire document is parsed, it is recomended to include this tag al the end of `<body>`.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Internal JavaScript Example</title>
+        
+    </head>
+    <body>
+        <h1>Internal JavaScript Example</h1>
+        <script>
+            alert("Hello, World!");       
+        </script>
+    </body>
+    </html>
+    ```
+
+1. **External JavaScript**
+
+    You can include JavaScript from an external file using the `<script>` tag with the `src` attribute. As with the internal JavaScript, the position of the `<script>` tag inside the HTML document matters.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>External JavaScript Example</title>
+    </head>
+    <body>
+        <h1>External JavaScript Example</h1>
+        <script src="script.js"></script>
+    </body>
+    </html>
+    ```
+
+    **script.js**:
+    ```js
+    alert("Hello, World!");
+    console.log("Hello World!!!")
+    ```
+
+2. **Defer and Async Attributes**
+    You can use the `defer` or `async` attributes in the `<script>` tag to control the loading behavior of your JavaScript.
+
+      - `defer`: The script will be executed after the HTML has been completely parsed.
+      - `async`: The script will be executed asynchronously as soon as it is available.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Defer and Async Example</title>
+        <script src="defer-script.js" defer></script>
+        <script src="async-script.js" async></script>
+    </head>
+    <body>
+        <h1>Defer and Async Example</h1>
+    </body>
+    </html>
+    ```
+
+    **defer-script.js**
+
+    ```js
+    console.log("Defer Script Loaded");
+    ```
+
+    **async-script.js**
+
+    ```js
+    console.log("Async Script Loaded");
+    ```
+
+    Placing your script tags just before the closing `</body>` tag ensures that the script runs after the HTML has been parsed. However, this doesn't inherently guarantee the order of execution if you have multiple scripts and asynchronous behavior. By the use of `defer`we have more control over the execution. of the scripts because  `defer` maintains the order of execution if you have multiple scripts
+
+    Even that in our case any of the two options are OK to preserve the execution of the script once the HTML document is totally parsed.
+
+
+3. **Event Handlers in HTML Attributes**
+   
+    You can include JavaScript directly within HTML attributes, such as `onclick`, `onload`, etc.
+    It is not a good practice, just in some specific cases.
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Handlers Example</title>
+    </head>
+    <body>
+        <h1>Event Handlers Example</h1>
+        <button onclick="alert('Hello, World!')">Click Me</button>
+    </body>
+    </html>
+    ```
+
+

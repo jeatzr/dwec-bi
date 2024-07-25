@@ -235,10 +235,10 @@ The `<input>` tag is a fundamental HTML element used within forms to collect use
 - `number`: Allows input of floating-point numbers only. Range restrictions can be applied.
 - `range`: Creates a graphical slider for selecting a numeric range.
 - `date/time inputs` (Note: not universally supported across all browsers):
-  - `datetime-local`
-  - `month`
-  - `week`
-  - `time`
+      - `datetime-local`
+      - `month`
+      - `week`
+      - `time`
 - `color`: Provides a color selector control.
 
 Check --> [https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)

@@ -122,6 +122,15 @@ A REST API (Representational State Transfer Application Programming Interface) i
 
 ### 2.1 **Backend Tools to construct REST API**
 
+We can construct a REST API: With any server-side language:
+
+  - PHP
+  - Java
+  - Rubi
+  - Python
+  - NODE.js 
+  - ASP.NET
+
 For constructing an API, you'll often use a server-side framework. Some popular options are:
 
 - **Node.js with [Express](https://expressjs.com/) (JavaScript)**
@@ -129,6 +138,7 @@ For constructing an API, you'll often use a server-side framework. Some popular 
 - **[FastAPI](https://fastapi.tiangolo.com/) (Python)**
 - **[Ruby on Rails](https://rubyonrails.org/) (Ruby)**
 - **[Spring Boot](https://stackabuse.com/build-a-spring-boot-rest-api-with-java-full-guide/) (Java)**
+
 
 ![js meme](img/js-meme.jpg)
 
@@ -453,15 +463,22 @@ In modern web development, Fetch simplifies and enhances many aspects of AJAX co
 #### Key Methods to Handle Asynchrony with Fetch:
 1. **Promises**
 2. **async / await**
+   
+##### [--> Link to Fetch in msn](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ### 5.1 **Fetch with Promises**
 
 Fetch API uses [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to handle asynchronous operations. Here's a basic example of how to use Fetch with Promises:
 
 ```js
+// This is a GET request with promises
 fetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then(response => response.json())
+  .then(response => {
+    // parse the json response
+    response => response.json()
+  })
   .then(data => {
+      // Do something with data
       document.getElementById('output').innerText = JSON.stringify(data);
   })
   .catch(error => console.error('Error:', error));
@@ -469,19 +486,338 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 ### 5.2 **Fetch with Async/Await**
 
-The async/await syntax provides a cleaner and more readable way to handle asynchronous operations. 
+The [async/await](#52-fetch-with-asyncawait) syntax provides a cleaner and more readable way to handle asynchronous operations. 
 It's important to note that `await` can only be used inside an `async` function. Here's how to use Fetch with async/await:
 
 ```js
+// this is a GET request with async/await
 async function fetchData() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        // parse the json response
         const data = await response.json();
+        // do something with data
         console.log(data);
-        document.getElementById('output').innerText = JSON.stringify(data,null,2);
+        return data;
     } catch (error) {
         console.error('Error:', error);
     }
 }
 ```
+
+### 5.3 **Handling HTTP Responses**
+
+The `Response` object in the Fetch API provides several methods to handle and format HTTP responses. Each of these methods returns a promise that resolves to different types of data.
+
+- `response.json()`: Returns a promise resolved to a JSON object.
+- `response.text()`: Returns a promise resolved to raw text.
+- `response.formData()`: Returns a promise resolved to `formData`.
+- `response.blob()`: Returns a promise resolved to a `Blob` (a file-like object of binary aw data).
+
+
+#### `response.json()`
+
+That's the one that we will be using most of the times, because JSON is the most common format that the API's out there serves us data.
+
+- Returns a promise resolved to a JSON object.
+- Useful for handling responses containing JSON data.
+  
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+#### Connection Status Information
+
+The `Response` object also provides information about the status of the connection:
+
+#### `response.status`
+
+- Returns the status code of the response.
+- Typical values include:
+    - `100-199`: Informational responses.
+    - `200-299`: Successful responses.
+          - `200`: OK.
+    - `300-399`:Redirection messages
+    - `400-499`: Client error response.
+          - `404`: Not Found.
+    - `500-599`: Server error responses.
+          - `500`: Internal Server Error. 
+    - [All HTTP Response Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+```js
+fetch('https://api.example.com/data')
+    .then(response => {
+        console.log(response.status); // e.g., 200, 404, 500
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+#### `response.ok`
+
+- Returns a boolean indicating whether the response was successful (status in the range 200-299).
+
+      ```js
+      fetch('https://api.example.com/data')
+          .then(response => {
+              if (response.ok) {
+                  return response.json();
+              } else {
+                  throw new Error('Network response was not ok');
+              }
+          })
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+      ```
+
+### 5.3 **GET, POST, PUT, PATCH, DELETE Requests**
+
+As you could see, if you don't specify a method, the default method is GET. In the previous examples we have created GET requests. You can see we have not defined `method`, `body`or `headers`into fetch options.
+
+When dealing with POST, PUT and PATCH requests, we need to include `method`, `body` and  `headers` as fetch options.
+
+#### GET Requests:
+
+- For GET requests, we typically do not need to include a Content-Type header. GET requests do not have a body, so there's no content type to specify.
+- However we can send some data as params when the API endpoint allows it. 
+- But maybe we could need to include some information in the header as `'Authorization'` in the cases is required.
+
+Example:
+
+```js
+// GET simple request example
+fetch('https://api.example.com/get-images?query=cats&limit=20')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+// GET Authorization required
+fetch('https://api.example.com/get-images?query=cats&limit=20', {
+  headers: {
+        'Authorization': 'Bearer your-api-key'
+    },
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+
+#### POST, PUT, PATCH Request:
+
+For these types of requests that create or modify a resource, we do need to send a `body`. It  will be necessary to include:
+
+- `Content-Type` header to specify the media type of content
+      - Common values for the Content-Type header include `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, etc.
+- `method`:
+      - `'POST'`
+      - `'PUT'`
+      - `'PATCH`
+- `body`: Most of the times, when `Content-Type` is JSON we have to 'stringify' some data object:
+      - `body: JSON.stringify(data)`
+
+Examples:
+```js
+const BASE_URL = 'https://api.example.com';
+const API_KEY = 'your-api-key';
+
+// Function to handle POST requests
+export async function postData(endpoint, body) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Post Data Error:', error);
+        throw error;
+    }
+}
+
+// Function to handle PUT requests
+export async function putData(endpoint, body) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Put Data Error:', error);
+        throw error;
+    }
+}
+```
+
+
+#### DELETE Requests
+
+  - The DELETE method is used to delete a resource identified by a URL. Like the GET method, the DELETE method typically doesn't need a body, and thus it usually doesn't require a `Content-Type` header. However, there are some scenarios where you might need to include a body with a DELETE request and also could be neccessary to include some information in the header as `'Authorization'`.
+
+Example:
+```js
+// Simple delete function without options
+export async function simpleDeleteData(endpoint) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}`, {
+          method: 'DELETE'
+        });
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Delete Data Error:', error);
+        throw error;
+    }
+}
+
+// mode advanced, with some options
+export async function deleteData(endpoint, body = null) {
+    try {
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${API_KEY}`
+            }
+        };
+        // asking for a body. In case there is body we stringify it 
+        if (body) {
+            options.headers['Content-Type'] = 'application/json';
+            options.body = JSON.stringify(body);
+        }
+        const response = await fetch(`${BASE_URL}${endpoint}`, options);
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Delete Data Error:', error);
+        throw error;
+    }
+}
+```
+
+
+
+### 5.4 **Encapsule fetch requests in reusable modules**
+
+It is always a good practice to encapsule the `fetch` requests to our API in a separate js module that we can import in the main module. For that purpose we have to use [Ecma Script Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) (ESM)
+
+1. Import the Main Script as a Module
+
+      ```html
+      <script src="your-main.js" type="module"></script>
+      ```
+
+2. Create the `your-api.js` Module
+
+      Create a separate JavaScript file named `your-api.js` that will encapsulate all the logic for accessing the API. This module will contain constants, such as the base URL and API keys, and functions for making API requests.
+
+      ```js
+      // your-api.js
+
+      const BASE_URL = 'https://api.example.com';
+      const API_KEY = 'your-api-key';
+
+      // Function to handle GET requests
+      export async function fetchData(endpoint) {
+          try {
+              const response = await fetch(`${BASE_URL}${endpoint}`, {
+                  headers: {
+                      'Authorization': `Bearer ${API_KEY}`,
+                      'Content-Type': 'application/json'
+                  }
+              });
+              if (!response.ok) {
+                  throw new Error(`Error: ${response.statusText}`);
+              }
+              const data = await response.json();
+              return data;
+          } catch (error) {
+              console.error('Fetch Data Error:', error);
+              throw error;
+          }
+      }
+
+      // Function to handle POST requests
+      export async function postData(endpoint, body) {
+          try {
+              const response = await fetch(`${BASE_URL}${endpoint}`, {
+                  method: 'POST',
+                  headers: {
+                      'Authorization': `Bearer ${API_KEY}`,
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+              });
+              if (!response.ok) {
+                  throw new Error(`Error: ${response.statusText}`);
+              }
+              const data = await response.json();
+              return data;
+          } catch (error) {
+              console.error('Post Data Error:', error);
+              throw error;
+          }
+      }
+
+      // Other API-related functions can be added here
+
+      ```
+
+3. Import and Use the API Module in the Main Script
+   
+      In your main JavaScript file, `your-main.js`, import the functions from the `your-api.js` module and use them to make API requests.
+
+      ```js
+      // your-main.js
+      import { fetchData, postData } from './your-api.js';
+
+      async function main() {
+          try {
+              // Example of making a GET request
+              const data = await fetchData('/some-endpoint');
+              console.log('Fetched Data:', data);
+
+              // Example of making a POST request
+              const postDataBody = { key: 'value' };
+              const postDataResponse = await postData('/some-endpoint', postDataBody);
+              console.log('Posted Data:', postDataResponse);
+          } catch (error) {
+              console.error('Main Function Error:', error);
+          }
+      }
+
+      // Run the main function
+      main();
+
+      ```
+
+<div class="important-box">
+<h3><i class="fa-solid fa-circle-exclamation"></i></i>IMPORTANT</h3>
+<p>From now in advance it is MANDATORY to encapsule the fetch functions of each API that we are accessing in our project in a separate module.</p>
+</div>
 
