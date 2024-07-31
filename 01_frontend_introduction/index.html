@@ -466,6 +466,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Bootstrap
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -782,6 +791,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Bootstrap
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -996,12 +1014,9 @@
 <li>Dont forget to document your project with a <strong>README.md</strong> file written in <strong>Markdown</strong>. Markdown is a lightweight markup language that is commonly used for formatting text on the web. When writing README files on platforms like GitHub, Markdown provides a simple and readable way to structure and style text without needing to write HTML directly.</li>
 <li>Learn something about <a href="https://www.markdownguide.org/cheat-sheet/">Markdown languaje</a>
 <img alt="markdown" src="img/10_md.png" /></li>
-<li>
-<p>See this example -&gt; <a href="https://github.com/jeatzr/txt2gift/blob/main/README.md">README.md</a></p>
-</li>
-<li>
-<p>Example of Markdown syntax:
-</p>
+<li>Take a look on this example -&gt; <a href="https://github.com/jeatzr/txt2gift/blob/main/README.md">README.md</a></li>
+<li>The current notes you are reading are also written in markdown and then compiled by <code>mkdocs</code> to generate beautiful documentation. -&gt; <a href="https://github.com/jeatzr/dwec-bi/blob/main/docs/01_frontend_introduction/README.md">README.md</a></li>
+<li>Example of Markdown syntax:
 </li>
 </ul>
 </blockquote>
@@ -1021,6 +1036,8 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>```javascript
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>console.log(&#39;Hello, World!&#39;);
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>\`\`\`
 </span></code></pre></div>
 <h3 id="54-package-managers"><strong>5.4 Package Managers</strong></h3>
 <p>Package managers help us install various utilities, features, and frameworks. They streamline the process of adding, updating, and managing software packages, ensuring that we have the necessary dependencies and tools to develop and run our applications efficiently.
@@ -1151,7 +1168,7 @@ If you want to assure that the code is executed once the entire document is pars
 <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Async Script Loaded&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Placing your script tags just before the closing <code>&lt;/body&gt;</code> tag ensures that the script runs after the HTML has been parsed. However, this doesn't inherently guarantee the order of execution if you have multiple scripts and asynchronous behavior. By the use of <code>defer</code>we have more control over the execution. of the scripts because  <code>defer</code> maintains the order of execution if you have multiple scripts</p>
-<p>Even that in our case any of the two options are OK to preserve the execution of the script once the HTML document is totally parsed.</p>
+<p>Even that, in our case, any of the two options are OK to preserve the execution of the script once the HTML document is totally parsed.</p>
 </li>
 <li>
 <p><strong>Event Handlers in HTML Attributes</strong></p>
@@ -1172,6 +1189,68 @@ It is not a good practice, just in some specific cases.</p>
 </span></code></pre></div>
 </li>
 </ol>
+<h2 id="7-bootstrap">7. <strong>Bootstrap</strong></h2>
+<h4 id="what-is-bootstrap">What is Bootstrap?</h4>
+<p>Bootstrap is a popular open-source front-end framework for developing <strong>responsive and mobile-first websites</strong>. It provides a collection of CSS and JavaScript components that help you design and build user interfaces quickly and efficiently. Bootstrap is designed to simplify the process of creating consistent and visually appealing layouts across different devices and screen sizes.</p>
+<h4 id="key-features">Key Features:</h4>
+<ul>
+<li><strong>Responsive Grid System</strong>: Automatically adjusts the layout based on the screen size, ensuring your website looks good on all devices.</li>
+<li><strong>Pre-styled Components</strong>: Includes a wide range of ready-to-use components such as buttons, forms, navbars, and modals.</li>
+<li><strong>Customizable</strong>: Allows for customization of components and styles using variables and themes.</li>
+<li><strong>JavaScript Plugins</strong>: Comes with built-in JavaScript plugins for additional functionality like carousels, tooltips, and modals.</li>
+</ul>
+<h4 id="how-to-use-bootstrap">How to Use Bootstrap:</h4>
+<ol>
+<li><strong>Ways to Include Bootstrap in Your Project:</strong><ul>
+<li><strong>Download Bootstrap</strong>: You can just download Bootstrap compiled files manually and add them to your HTML file.</li>
+<li><strong>Via CDN</strong>: You can just add the CDN links to the CSS and scripts files in the HTML file without download them. </li>
+<li><strong>Install dependencies</strong>: You can install with <code>npm i bootstrap@5.3.3</code> the dependencies in the project. In this case the node packet manager keeps control on the files.</li>
+<li><strong>Using Bootstrap Snippet</strong>: You can use for example the <code>bs5-$</code> snippet in VSCode editor. The Bs5 template will write all the CDN links for you. </li>
+</ul>
+</li>
+</ol>
+<p>Get more information at: <a href="https://getbootstrap.com">getbootstrap.com</a></p>
+<ol>
+<li><strong>Use Bootstrap Components:</strong></li>
+<li><strong>Grid System</strong>: Create responsive layouts using Bootstrap's grid system. For example:
+     <div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span><span class="p">&gt;</span>Column 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span><span class="p">&gt;</span>Column 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div></li>
+<li>
+<p><strong>Components</strong>: Utilize pre-styled components such as buttons, forms, and navbars:
+     <div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Primary Button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Customize Bootstrap:</strong></p>
+<ul>
+<li><strong>Override Defaults</strong>: Customize Bootstrap styles by adding your own CSS rules after the Bootstrap CSS link in your HTML.</li>
+<li><strong>Use Bootstrap's Customization Tools</strong>: Modify Bootstrap variables and recompile the CSS if you are using a build tool.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using B5 Snippets in Visual Studio Code:</strong></p>
+<ul>
+<li><strong>Install Bootstrap 5 Quick Snippets Extension</strong>: To streamline your development process, install the <strong>Bootstrap 5 Quick Snippets</strong> extension for Visual Studio Code. This extension provides code snippets for Bootstrap 5, allowing you to quickly insert Bootstrap components and classes into your code.</li>
+<li><strong>Using Snippets</strong>: Once installed, you can use snippets to insert Bootstrap code. For example:<ul>
+<li>Type <code>bs5-$</code> and press <code>Tab</code> to create the full HTML document template</li>
+<li>Type <code>bs5-navbar-default</code> and press <code>Tab</code> to insert a Bootstrap navbar snippet.</li>
+<li>Type <code>bs5-button-default</code> and press <code>Tab</code> to insert a Bootstrap default button snippet.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="resources">Resources:</h4>
+<ul>
+<li><strong>Official Documentation</strong>: <a href="https://getbootstrap.com/docs/">Bootstrap Documentation</a></li>
+<li><strong>Examples and Templates</strong>: Explore various Bootstrap examples and templates to get started quickly.</li>
+<li><strong>B4 Snippets for VSCode</strong>: <a href="https://marketplace.visualstudio.com/items?itemName=anbuselvanrocky.bootstrap5-vscode">B5 Quick Snippets Extension</a></li>
+</ul>
 
 
 
