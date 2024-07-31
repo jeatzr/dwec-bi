@@ -503,6 +503,7 @@ if (!number) {
 }
 ```
 
+
 ### **4.4 Undefined and Null Types**
 
 In JavaScript, `undefined` and `null` are two distinct types that represent absence of value or non-existence. They are often confused with each other but have different meanings and use cases.
@@ -524,6 +525,7 @@ In JavaScript, `undefined` and `null` are two distinct types that represent abse
     let b = null;
     console.log(b); // Output: null
     ```
+
 
 #### Key Differences
 
@@ -554,6 +556,10 @@ console.log(y); // Output: null
 console.log(typeof x); // Output: undefined
 console.log(typeof y); // Output: object
 ```
+
+#### Can you solve the biggest JS enigma?
+![big js enigma](img/js-enigma.webp)
+
 ## **5. Control Sentences**
 
 ### **5.1 Conditional Statements**
@@ -601,6 +607,8 @@ switch (fruit) {
         console.log("Unknown fruit.");
 }
 ```
+
+![switch meme](img/switch-meme.jpg)
 
 #### [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
 

@@ -1112,11 +1112,13 @@ It's good practice to place the code we want to execute inside a handler functio
 <li><code>url</code>: Enforces input restrictions to ensure the text conforms to URL format.</li>
 <li><code>number</code>: Allows input of floating-point numbers only. Range restrictions can be applied.</li>
 <li><code>range</code>: Creates a graphical slider for selecting a numeric range.</li>
-<li><code>date/time inputs</code> (Note: not universally supported across all browsers):</li>
+<li><code>date/time inputs</code> (Note: not universally supported across all browsers):<ul>
 <li><code>datetime-local</code></li>
 <li><code>month</code></li>
 <li><code>week</code></li>
 <li><code>time</code></li>
+</ul>
+</li>
 <li><code>color</code>: Provides a color selector control.</li>
 </ul>
 <p>Check --&gt; <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types">https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types</a></p>
@@ -1441,6 +1443,72 @@ It's good practice to place the code we want to execute inside a handler functio
 <h3 id="44-hybrid-validation">4.4 <strong>Hybrid Validation</strong></h3>
 <h3 id="45-validation-using-js-libraries">4.5 <strong>Validation using JS libraries</strong></h3>
 <h2 id="5-regular-expressions-regex">5. <strong>Regular Expressions (regex)</strong></h2>
+<p>Regular Expressions, or regex, are patterns used to match character combinations in strings. In JavaScript, regex is implemented using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions"><code>RegExp</code></a> object or through regex literals.</p>
+<h4 id="creating-a-regular-expression">Creating a Regular Expression</h4>
+<ol>
+<li><strong>Using Regex Literals</strong>:
+   <div class="language-javascript highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">/pattern/flags;</span>
+</span></code></pre></div></li>
+<li><strong>Using the RegExp Constructor</strong>:
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;pattern&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;flags&#39;</span><span class="p">);</span>
+</span></code></pre></div></li>
+</ol>
+<h4 id="commonly-used-flags">Commonly Used Flags</h4>
+<ul>
+<li><code>g</code>: Global search (find all matches)</li>
+<li><code>i</code>: Case-insensitive search</li>
+<li><code>m</code>: Multi-line search</li>
+</ul>
+<p>In our case the most useful is the <code>i</code> flag</p>
+<h4 id="basic-syntax">Basic Syntax</h4>
+<ul>
+<li><code>^</code>: Matches the beginning of the string.</li>
+<li><code>$</code>: Matches the end of the string.</li>
+<li><code>.</code>: Matches any single character except newline.</li>
+<li><code>*</code>: Matches 0 or more repetitions of the preceding element.</li>
+<li><code>+</code>: Matches 1 or more repetitions of the preceding element.</li>
+<li><code>?</code>: Matches 0 or 1 repetition of the preceding element.</li>
+<li><code>{n}</code>: Matches exactly n repetitions of the preceding element.</li>
+<li><code>{n,}</code>: Matches n or more repetitions of the preceding element.</li>
+<li><code>{n,m}</code>: Matches between n and m repetitions of the preceding element.</li>
+<li><code>[abc]</code>: Matches any one of the characters a, b, or c.</li>
+<li><code>[^abc]</code>: Matches any character except a, b, or c.</li>
+<li><code>(abc)</code>: Matches the exact sequence abc.</li>
+<li><code>\d</code>: Matches any digit (equivalent to <code>[0-9]</code>).</li>
+<li><code>\D</code>: Matches any non-digit character (equivalent to <code>[^0-9]</code>).</li>
+<li><code>\w</code>: Matches any alphanumeric character including underscore (equivalent to <code>[A-Za-z0-9_]</code>).</li>
+<li><code>\W</code>: Matches any non-alphanumeric character (equivalent to <code>[^A-Za-z0-9_]</code>).</li>
+<li><code>\s</code>: Matches any whitespace character (space, tab, newline).</li>
+<li><code>\S</code>: Matches any non-whitespace character.</li>
+</ul>
+<h4 id="example-usage">Example Usage</h4>
+<ol>
+<li>
+<p><strong>Testing a pattern</strong>:
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/hello/i</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">if</span><span class="w"> </span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Matching a Pattern</strong>:
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\d+/g</span><span class="p">;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;There are 123 apples and 456 oranges.&quot;</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">));</span><span class="w"> </span><span class="c1">// [&quot;123&quot;, &quot;456&quot;]</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Replacing with a Pattern</strong>:
+    ```js
+    const regex = /apples/gi;
+    const str = "Apples are sweet. I like apples.";
+    const newStr = str.replace(regex, "oranges");
+    console.log(newStr); // "oranges are sweet. I like oranges."</p>
+</li>
+</ol>
+<p>Regular expressions are powerful tools for pattern matching and text manipulation. They can be complex, but with practice, you'll find them incredibly useful for various tasks in JavaScript.</p>
+<p><img alt="Regex meme" src="img/regex-meme.webp" /></p>
 
 
 

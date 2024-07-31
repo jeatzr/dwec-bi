@@ -159,6 +159,8 @@ fruits.forEach((fruit, index) => {
 // 3: Date
 ```
 
+![foreach meme](img/foreachmeme.jpg)
+
 ### **1.4 Array Properties**
 
 Arrays in JavaScript come with several built-in properties that provide useful information and functionality. Here are two of the most important properties:
@@ -202,6 +204,7 @@ JavaScript arrays come with a variety of built-in methods that provide powerful 
 11. [`map`](#11-map)
 12. [`filter`](#12-filter)
 13. [`reduce`](#13-reduce)
+14. [`sort`](#14-sort)
 
 #### 1. `push`
 
@@ -336,6 +339,29 @@ const totalLength = allFruits.reduce(function(accumulator, fruit) {
 }, 0);
 console.log(totalLength); // Output: 26
 ```
+#### 14. `sort`
+
+It is used to sort the elements of an array in place and returns the sorted array. When no compare function is provided, sort() converts each element to a string and sorts them lexicographically (dictionary order).
+
+  - Sorting without a Compare Function
+      ```js
+      const fruits = ['banana', 'apple', 'orange'];
+      fruits.sort();
+      console.log(fruits); // ["apple", "banana", "orange"]
+      ```
+
+  - Sorting with a Compare Function
+      ```js
+      const numbers = [4, 2, 5, 1, 3];
+      numbers.sort((a, b) => a - b);
+      console.log(numbers); // [1, 2, 3, 4, 5]
+      ```
+  
+  Source: [@mdn web docs_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+#### Boom!
+![boom!](img/boom.webp)
+
 
 <div class="exercise-box">
   <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Array Manipulation with `map`</h3>
@@ -355,6 +381,7 @@ console.log(totalLength); // Output: 26
     document.write("<p>Squares: " + squares.join(", ") + "</p>");
   </script>
 </div>
+
 
 
 ## **2. Objects**
@@ -555,7 +582,10 @@ cars.forEach(function(car) {
 
 ## **5. JSON Notation**
 
-JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is widely used as a format for exchanging data between a server and a web application, and is a standard data format with many programming languages.
+#### Do you know Jason?
+![who is json](img/json-meme.webp)
+
+**JSON (JavaScript Object Notation) **is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is widely used as a format for exchanging data between a server and a web application, and is a standard data format with many programming languages.
 
 #### Syntax
 
@@ -624,3 +654,4 @@ let parsedObject = JSON.parse(jsonUser);
 console.log("\nJSON converted back to object:");
 console.log(parsedObject);
 ```
+

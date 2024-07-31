@@ -201,8 +201,8 @@ Version control tools are software systems that help manage changes to files, do
 > - Dont forget to document your project with a **README.md** file written in **Markdown**. Markdown is a lightweight markup language that is commonly used for formatting text on the web. When writing README files on platforms like GitHub, Markdown provides a simple and readable way to structure and style text without needing to write HTML directly.
 > - Learn something about [Markdown languaje](https://www.markdownguide.org/cheat-sheet/)
 > ![markdown](img/10_md.png)
-> - See this example -> [README.md](https://github.com/jeatzr/txt2gift/blob/main/README.md)
-> 
+> - Take a look on this example -> [README.md](https://github.com/jeatzr/txt2gift/blob/main/README.md)
+> - The current notes you are reading are also written in markdown and then compiled by `mkdocs` to generate beautiful documentation. -> [README.md](https://github.com/jeatzr/dwec-bi/blob/main/docs/01_frontend_introduction/README.md)
 > - Example of Markdown syntax:
 > 
 
@@ -224,6 +224,7 @@ Examples and instructions on how to use your project.
 ```javascript
 console.log('Hello, World!');
 
+\`\`\`
 ```
 
 ### **5.4 Package Managers**
@@ -378,7 +379,7 @@ We have several ways to include  JavaScript code in our web page:
 
     Placing your script tags just before the closing `</body>` tag ensures that the script runs after the HTML has been parsed. However, this doesn't inherently guarantee the order of execution if you have multiple scripts and asynchronous behavior. By the use of `defer`we have more control over the execution. of the scripts because  `defer` maintains the order of execution if you have multiple scripts
 
-    Even that in our case any of the two options are OK to preserve the execution of the script once the HTML document is totally parsed.
+    Even that, in our case, any of the two options are OK to preserve the execution of the script once the HTML document is totally parsed.
 
 
 3. **Event Handlers in HTML Attributes**
@@ -400,5 +401,58 @@ We have several ways to include  JavaScript code in our web page:
     </body>
     </html>
     ```
+
+## 7. **Bootstrap**
+
+#### What is Bootstrap?
+
+Bootstrap is a popular open-source front-end framework for developing **responsive and mobile-first websites**. It provides a collection of CSS and JavaScript components that help you design and build user interfaces quickly and efficiently. Bootstrap is designed to simplify the process of creating consistent and visually appealing layouts across different devices and screen sizes.
+
+#### Key Features:
+- **Responsive Grid System**: Automatically adjusts the layout based on the screen size, ensuring your website looks good on all devices.
+- **Pre-styled Components**: Includes a wide range of ready-to-use components such as buttons, forms, navbars, and modals.
+- **Customizable**: Allows for customization of components and styles using variables and themes.
+- **JavaScript Plugins**: Comes with built-in JavaScript plugins for additional functionality like carousels, tooltips, and modals.
+
+#### How to Use Bootstrap:
+
+1. **Ways to Include Bootstrap in Your Project:**
+      - **Download Bootstrap**: You can just download Bootstrap compiled files manually and add them to your HTML file.
+      - **Via CDN**: You can just add the CDN links to the CSS and scripts files in the HTML file without download them. 
+      - **Install dependencies**: You can install with `npm i bootstrap@5.3.3` the dependencies in the project. In this case the node packet manager keeps control on the files.
+      - **Using Bootstrap Snippet**: You can use for example the `bs5-$` snippet in VSCode editor. The Bs5 template will write all the CDN links for you. 
+     
+  Get more information at: [getbootstrap.com](https://getbootstrap.com)
+
+1. **Use Bootstrap Components:**
+   - **Grid System**: Create responsive layouts using Bootstrap's grid system. For example:
+     ```html
+     <div class="container">
+         <div class="row">
+             <div class="col-md-6">Column 1</div>
+             <div class="col-md-6">Column 2</div>
+         </div>
+     </div>
+     ```
+   - **Components**: Utilize pre-styled components such as buttons, forms, and navbars:
+     ```html
+     <button type="button" class="btn btn-primary">Primary Button</button>
+     ```
+
+2. **Customize Bootstrap:**
+      - **Override Defaults**: Customize Bootstrap styles by adding your own CSS rules after the Bootstrap CSS link in your HTML.
+      - **Use Bootstrap's Customization Tools**: Modify Bootstrap variables and recompile the CSS if you are using a build tool.
+
+3. **Using B5 Snippets in Visual Studio Code:**
+      - **Install Bootstrap 5 Quick Snippets Extension**: To streamline your development process, install the **Bootstrap 5 Quick Snippets** extension for Visual Studio Code. This extension provides code snippets for Bootstrap 5, allowing you to quickly insert Bootstrap components and classes into your code.
+      - **Using Snippets**: Once installed, you can use snippets to insert Bootstrap code. For example:
+        - Type `bs5-$` and press `Tab` to create the full HTML document template
+        - Type `bs5-navbar-default` and press `Tab` to insert a Bootstrap navbar snippet.
+        - Type `bs5-button-default` and press `Tab` to insert a Bootstrap default button snippet.
+
+#### Resources:
+- **Official Documentation**: [Bootstrap Documentation](https://getbootstrap.com/docs/)
+- **Examples and Templates**: Explore various Bootstrap examples and templates to get started quickly.
+- **B4 Snippets for VSCode**: [B5 Quick Snippets Extension](https://marketplace.visualstudio.com/items?itemName=anbuselvanrocky.bootstrap5-vscode)
 
 

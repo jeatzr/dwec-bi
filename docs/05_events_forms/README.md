@@ -643,3 +643,79 @@ We need some CSS code to make visible the error message and the red border when 
 
 ## 5. **Regular Expressions (regex)**
 
+Regular Expressions, or regex, are patterns used to match character combinations in strings. In JavaScript, regex is implemented using the [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) object or through regex literals.
+
+#### Creating a Regular Expression
+
+1. **Using Regex Literals**:
+   ```javascript
+   const regex = /pattern/flags;
+   ```
+2. **Using the RegExp Constructor**:
+   ```js
+   const regex = new RegExp('pattern', 'flags');
+   ```
+
+#### Commonly Used Flags
+
+- `g`: Global search (find all matches)
+- `i`: Case-insensitive search
+- `m`: Multi-line search
+
+In our case the most useful is the `i` flag
+
+#### Basic Syntax
+
+- `^`: Matches the beginning of the string.
+- `$`: Matches the end of the string.
+- `.`: Matches any single character except newline.
+- `*`: Matches 0 or more repetitions of the preceding element.
+- `+`: Matches 1 or more repetitions of the preceding element.
+- `?`: Matches 0 or 1 repetition of the preceding element.
+- `{n}`: Matches exactly n repetitions of the preceding element.
+- `{n,}`: Matches n or more repetitions of the preceding element.
+- `{n,m}`: Matches between n and m repetitions of the preceding element.
+- `[abc]`: Matches any one of the characters a, b, or c.
+- `[^abc]`: Matches any character except a, b, or c.
+- `(abc)`: Matches the exact sequence abc.
+- `\d`: Matches any digit (equivalent to `[0-9]`).
+- `\D`: Matches any non-digit character (equivalent to `[^0-9]`).
+- `\w`: Matches any alphanumeric character including underscore (equivalent to `[A-Za-z0-9_]`).
+- `\W`: Matches any non-alphanumeric character (equivalent to `[^A-Za-z0-9_]`).
+- `\s`: Matches any whitespace character (space, tab, newline).
+- `\S`: Matches any non-whitespace character.
+
+#### Example Usage
+
+1. **Testing a pattern**:
+    ```js
+    const regex = /hello/i;
+    const str = "Hello World!";
+    console.log(regex.test(str)); // true
+    if 
+    ```
+
+2. **Matching a Pattern**:
+    ```js
+    const regex = /\d+/g;
+    const str = "There are 123 apples and 456 oranges.";
+    console.log(str.match(regex)); // ["123", "456"]
+    ```
+
+3. **Replacing with a Pattern**:
+    ```js
+    const regex = /apples/gi;
+    const str = "Apples are sweet. I like apples.";
+    const newStr = str.replace(regex, "oranges");
+    console.log(newStr); // "oranges are sweet. I like oranges."
+
+Regular expressions are powerful tools for pattern matching and text manipulation. They can be complex, but with practice, you'll find them incredibly useful for various tasks in JavaScript.
+
+![Regex meme](img/regex-meme.webp)
+
+
+
+
+
+
+
