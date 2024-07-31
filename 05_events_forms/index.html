@@ -882,8 +882,18 @@
 
 
 <h1 id="unit5-event-management-and-form-validation"><strong>UNIT5 - Event Management and Form Validation</strong></h1>
+<p>In this unit, we will explore how to handle user interactions and validate forms on a web page. </p>
+<ul>
+<li><strong>Events</strong> are fundamental to creating dynamic and interactive web applications. They allow us to respond to user actions, such as clicks, key presses, and form submissions. </li>
+<li><strong>Form validation</strong> is essential for ensuring that the data entered by users meets the required criteria before being sent to the server. </li>
+</ul>
+<p>By mastering event management and form validation, you will enhance the user experience and improve the reliability of your web applications.</p>
 <h2 id="1-event-handling-models-in-javascript"><strong>1. Event Handling Models in JavaScript</strong></h2>
-<p>falta aquí algo </p>
+<ul>
+<li>Events are mechanisms that are triggered when the user makes a change on a web page.</li>
+<li>The entity responsible for creating the object hierarchy that composes a web page is the DOM (Document Object Model).</li>
+<li>Therefore, it is the DOM that manages the events.</li>
+</ul>
 <h3 id="11-assign-an-event-handler"><strong>1.1 Assign an Event Handler</strong></h3>
 <p>In JavaScript, event handling allows you to respond to user actions or other events triggered in the browser. There are different models for handling events, each offering various ways to attach event listeners and manage event propagation.</p>
 <ol>
@@ -1426,6 +1436,7 @@ It's good practice to place the code we want to execute inside a handler functio
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
 </span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="p">}</span>
 </span></code></pre></div>
+<p><img alt="Vanilla js Validation" src="img/vanilla-validation.png" /></p>
 <div class="exercise-box">
     <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise</h3>
     <p>Add three new fields to the existing form:</p>
@@ -1439,18 +1450,57 @@ It's good practice to place the code we want to execute inside a handler functio
 </div>
 
 <h3 id="42-native-validation-with-html5">4.2 <strong>Native validation with HTML5</strong></h3>
+<p>HTML5 allows for native form validation using specific attributes on form elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>. This built-in validation ensures that a form will not be submitted until all requirements specified by these attributes are met. When an invalid field is found, feedback is provided for the first issue encountered.</p>
+<h4 id="key-html5-validation-attributes">Key HTML5 Validation Attributes</h4>
+<ul>
+<li><code>required</code>: Ensures the field is not left empty.</li>
+<li><code>minlength</code> and <code>maxlength</code>: Sets the minimum and maximum number of characters allowed.</li>
+<li><code>min</code> and <code>max</code>: Defines the minimum and maximum values for numerical inputs.</li>
+<li><code>pattern</code>: Validates the input against a specified regular expression.</li>
+<li><code>type</code>: Specifies the type of data expected (e.g., <code>email</code>, <code>number</code>, <code>url</code>).</li>
+<li><code>step</code>: Defines the legal number intervals for numerical inputs.</li>
+</ul>
+<p>While HTML5 validation is straightforward and requires no JavaScript, it has limitations. The main disadvantage is the lack of control over the validation process and feedback display. Only the first invalid field is highlighted, and customization of error messages is limited.</p>
+<h4 id="examples">Examples</h4>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>Username:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">required</span> <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;15&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;age&quot;</span><span class="p">&gt;</span>Age:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;age&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;18&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;99&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;website&quot;</span><span class="p">&gt;</span>Website:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;url&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;website&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;website&quot;</span> <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;https?://.+&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <h3 id="43-validation-html5-with-bootstrap-5">4.3 <strong>Validation HTML5 with Bootstrap 5</strong></h3>
+<p>Bootstrap 5 provides styles and classes that enhance HTML5 form validation, making it easier to create visually appealing and user-friendly forms. By combining HTML5 validation attributes with Bootstrap classes, we can provide immediate feedback to users in a more polished manner.</p>
+<h4 id="key-bootstrap-5-classes-for-validation">Key Bootstrap 5 Classes for Validation</h4>
+<ul>
+<li><code>.needs-validation</code>: Applied to the form element to enable validation styles.</li>
+<li><code>.was-validated</code>: Added to the form after submission to trigger validation feedback.</li>
+<li><code>.is-valid</code> and <code>.is-invalid</code>: Applied to input fields to show validation status.</li>
+<li><code>.valid-feedback</code> and <code>.invalid-feedback</code>: Used to display custom validation messages.</li>
+</ul>
+<p>See the example in the DWEC Materials repo. --&gt; <a href="https://github.com/jeatzr/dwec-materials/blob/main/05-events-forms/forms/06-html5-bootstrap-validation.html">06-html5-bootstrap-validation.html</a></p>
 <h3 id="44-hybrid-validation">4.4 <strong>Hybrid Validation</strong></h3>
+<p>Combining HTML5 validation with custom JavaScript validation allows for more flexible and comprehensive form validation. This hybrid approach ensures that basic validations are handled by HTML5 while more complex or specific requirements are managed with JavaScript.</p>
+<p>Take a look on the example --&gt; <a href="https://github.com/jeatzr/dwec-materials/blob/main/05-events-forms/forms/07-hybrid-validation-bootstrap-vanillajs.html">Hybrid Vanilla JS and Bootstrap Form Validation</a></p>
 <h3 id="45-validation-using-js-libraries">4.5 <strong>Validation using JS libraries</strong></h3>
 <h2 id="5-regular-expressions-regex">5. <strong>Regular Expressions (regex)</strong></h2>
 <p>Regular Expressions, or regex, are patterns used to match character combinations in strings. In JavaScript, regex is implemented using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions"><code>RegExp</code></a> object or through regex literals.</p>
 <h4 id="creating-a-regular-expression">Creating a Regular Expression</h4>
 <ol>
 <li><strong>Using Regex Literals</strong>:
-   <div class="language-javascript highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">/pattern/flags;</span>
+   <div class="language-javascript highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">/pattern/flags;</span>
 </span></code></pre></div></li>
 <li><strong>Using the RegExp Constructor</strong>:
-   <div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;pattern&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;flags&#39;</span><span class="p">);</span>
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;pattern&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;flags&#39;</span><span class="p">);</span>
 </span></code></pre></div></li>
 </ol>
 <h4 id="commonly-used-flags">Commonly Used Flags</h4>
@@ -1485,30 +1535,73 @@ It's good practice to place the code we want to execute inside a handler functio
 <ol>
 <li>
 <p><strong>Testing a pattern</strong>:
-    <div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/hello/i</span><span class="p">;</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">if</span><span class="w"> </span>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/hello/i</span><span class="p">;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">if</span><span class="w"> </span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Matching a Pattern</strong>:
-    <div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\d+/g</span><span class="p">;</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;There are 123 apples and 456 oranges.&quot;</span><span class="p">;</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">));</span><span class="w"> </span><span class="c1">// [&quot;123&quot;, &quot;456&quot;]</span>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\d+/g</span><span class="p">;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;There are 123 apples and 456 oranges.&quot;</span><span class="p">;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">));</span><span class="w"> </span><span class="c1">// [&quot;123&quot;, &quot;456&quot;]</span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Replacing with a Pattern</strong>:
-    ```js
-    const regex = /apples/gi;
-    const str = "Apples are sweet. I like apples.";
-    const newStr = str.replace(regex, "oranges");
-    console.log(newStr); // "oranges are sweet. I like oranges."</p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/apples/gi</span><span class="p">;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Apples are sweet. I like apples.&quot;</span><span class="p">;</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regex</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;oranges&quot;</span><span class="p">);</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newStr</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;oranges are sweet. I like oranges.&quot;</span>
+</span></code></pre></div></p>
 </li>
 </ol>
-<p>Regular expressions are powerful tools for pattern matching and text manipulation. They can be complex, but with practice, you'll find them incredibly useful for various tasks in JavaScript.</p>
+<h4 id="examples-of-regex">Examples of regex</h4>
+<p>In our case the most typical is to make the regex total match with the form field, so most of the times we have to start with <code>^</code>and end with <code>$</code>the regex.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">// Basic integer</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">basicIntRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^\d+$/</span><span class="p">;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1">// Unsigned Integer (0 not included)</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">intRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^[1-9]\d*$/</span><span class="p">;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1">// Signed Integer</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signIntRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^[-+]?\d+$/</span><span class="p">;</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="c1">// Postal Code (Spain)</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cpRegex</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="sr">/^[0-5][0-9]{5}$/</span><span class="p">;</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="c1">// Email 99.9% accurate</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emailRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(([^&lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</span>
+</span></code></pre></div>
+<h4 id="resources">Resources</h4>
+<ul>
+<li>Create and test regex in several languajes: <a href="https://regex101.com/">https://regex101.com/</a></li>
+<li>Email Address Regex <a href="https://emailregex.com/">https://emailregex.com/</a></li>
+<li>IA is also great finding regex but dont forget to test them!</li>
+</ul>
 <p><img alt="Regex meme" src="img/regex-meme.webp" /></p>
+<h4 id="how-to-validate-with-regex">How to validate with regex</h4>
+<p>We can validate fields using <code>test</code> or <code>match</code>  functions:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">isValidCP</span><span class="w"> </span><span class="p">(</span><span class="nx">cp</span><span class="p">){</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="c1">// Postal Code (Spain)</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cpRegex</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="sr">/^[0-5][0-9]{5}$/</span><span class="p">;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="c1">// Using test function of the regex</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">cpRegex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">cp</span><span class="p">)){</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="p">}</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="kd">function</span><span class="w"> </span><span class="nx">isValidCP2</span><span class="w"> </span><span class="p">(</span><span class="nx">cp</span><span class="p">){</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span><span class="c1">// Postal Code (Spain)</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cpRegex</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="sr">/^[0-5][0-9]{5}$/</span><span class="p">;</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">  </span><span class="c1">// Using match function of the string</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">cp</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">cpRegex</span><span class="p">)){</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">  </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Regular expressions are powerful tools for pattern matching and text manipulation. They can be complex, but with practice, you'll find them incredibly useful for various tasks in JavaScript.</p>
 
 
 
