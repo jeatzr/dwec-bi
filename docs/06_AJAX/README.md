@@ -818,6 +818,6 @@ It is always a good practice to encapsule the `fetch` requests to our API in a s
 
 <div class="important-box">
 <h3><i class="fa-solid fa-circle-exclamation"></i></i>IMPORTANT</h3>
-<p>From now in advance it is **MANDATORY** to encapsule the fetch functions of each API that we are accessing in our project in a **separate module**.</p>
+<p>From now in advance it is <strong>MANDATORY</strong> to encapsule the fetch functions of each API that we are accessing in our project in a <strong>separate module</strong>.</p>
 </div>
 

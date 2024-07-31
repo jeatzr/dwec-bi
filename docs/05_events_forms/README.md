@@ -1,8 +1,17 @@
 # **UNIT5 - Event Management and Form Validation**
 
+In this unit, we will explore how to handle user interactions and validate forms on a web page. 
+
+- **Events** are fundamental to creating dynamic and interactive web applications. They allow us to respond to user actions, such as clicks, key presses, and form submissions. 
+- **Form validation** is essential for ensuring that the data entered by users meets the required criteria before being sent to the server. 
+  
+By mastering event management and form validation, you will enhance the user experience and improve the reliability of your web applications.
+
 ## **1. Event Handling Models in JavaScript**
 
- falta aquí algo 
+- Events are mechanisms that are triggered when the user makes a change on a web page.
+- The entity responsible for creating the object hierarchy that composes a web page is the DOM (Document Object Model).
+- Therefore, it is the DOM that manages the events.
 
 ### **1.1 Assign an Event Handler**
 
@@ -620,6 +629,7 @@ We need some CSS code to make visible the error message and the red border when 
 }
 ```
 
+![Vanilla js Validation](img/vanilla-validation.png)
 
 <div class="exercise-box">
     <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise</h3>
@@ -635,9 +645,59 @@ We need some CSS code to make visible the error message and the red border when 
 
 ### 4.2 **Native validation with HTML5**
 
+
+HTML5 allows for native form validation using specific attributes on form elements like `<input>`, `<textarea>`, and `<select>`. This built-in validation ensures that a form will not be submitted until all requirements specified by these attributes are met. When an invalid field is found, feedback is provided for the first issue encountered.
+
+#### Key HTML5 Validation Attributes
+
+- `required`: Ensures the field is not left empty.
+- `minlength` and `maxlength`: Sets the minimum and maximum number of characters allowed.
+- `min` and `max`: Defines the minimum and maximum values for numerical inputs.
+- `pattern`: Validates the input against a specified regular expression.
+- `type`: Specifies the type of data expected (e.g., `email`, `number`, `url`).
+- `step`: Defines the legal number intervals for numerical inputs.
+
+While HTML5 validation is straightforward and requires no JavaScript, it has limitations. The main disadvantage is the lack of control over the validation process and feedback display. Only the first invalid field is highlighted, and customization of error messages is limited.
+
+#### Examples
+
+```html
+<form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required minlength="3" maxlength="15">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="18" max="99" required>
+    
+    <label for="website">Website:</label>
+    <input type="url" id="website" name="website" pattern="https?://.+">
+    
+    <button type="submit">Submit</button>
+</form>
+```
+
 ### 4.3 **Validation HTML5 with Bootstrap 5**
 
+Bootstrap 5 provides styles and classes that enhance HTML5 form validation, making it easier to create visually appealing and user-friendly forms. By combining HTML5 validation attributes with Bootstrap classes, we can provide immediate feedback to users in a more polished manner.
+
+#### Key Bootstrap 5 Classes for Validation
+
+- `.needs-validation`: Applied to the form element to enable validation styles.
+- `.was-validated`: Added to the form after submission to trigger validation feedback.
+- `.is-valid` and `.is-invalid`: Applied to input fields to show validation status.
+- `.valid-feedback` and `.invalid-feedback`: Used to display custom validation messages.
+
+See the example in the DWEC Materials repo. --> [06-html5-bootstrap-validation.html](https://github.com/jeatzr/dwec-materials/blob/main/05-events-forms/forms/06-html5-bootstrap-validation.html)
+
 ### 4.4 **Hybrid Validation**
+
+Combining HTML5 validation with custom JavaScript validation allows for more flexible and comprehensive form validation. This hybrid approach ensures that basic validations are handled by HTML5 while more complex or specific requirements are managed with JavaScript.
+
+
+Take a look on the example --> [Hybrid Vanilla JS and Bootstrap Form Validation](https://github.com/jeatzr/dwec-materials/blob/main/05-events-forms/forms/07-hybrid-validation-bootstrap-vanillajs.html)
 
 ### 4.5 **Validation using JS libraries**
 
@@ -708,10 +768,68 @@ In our case the most useful is the `i` flag
     const str = "Apples are sweet. I like apples.";
     const newStr = str.replace(regex, "oranges");
     console.log(newStr); // "oranges are sweet. I like oranges."
+    ```
+
+#### Examples of regex
+
+In our case the most typical is to make the regex total match with the form field, so most of the times we have to start with `^`and end with `$`the regex.
+
+```js
+// Basic integer
+const basicIntRegex = /^\d+$/;
+// Unsigned Integer (0 not included)
+const intRegex = /^[1-9]\d*$/;
+// Signed Integer
+const signIntRegex = /^[-+]?\d+$/;
+// Postal Code (Spain)
+const cpRegex  = /^[0-5][0-9]{5}$/;
+// Email 99.9% accurate
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+```
+
+#### Resources
+
+- Create and test regex in several languajes: [https://regex101.com/](https://regex101.com/)
+- Email Address Regex [https://emailregex.com/](https://emailregex.com/)
+- IA is also great finding regex but dont forget to test them!
+
+
+![Regex meme](img/regex-meme.webp)
+
+#### How to validate with regex
+
+We can validate fields using `test` or `match`  functions:
+
+```js
+
+function isValidCP (cp){
+  // Postal Code (Spain)
+  const cpRegex  = /^[0-5][0-9]{5}$/;
+  // Using test function of the regex
+  if(cpRegex.test(cp)){
+    return true;
+  }else{
+    return false
+  }
+}
+
+function isValidCP2 (cp){
+  // Postal Code (Spain)
+  const cpRegex  = /^[0-5][0-9]{5}$/;
+  // Using match function of the string
+  if(cp.match(cpRegex)){
+    return true;
+  }else{
+    return false
+  }
+}
+
+```
 
 Regular expressions are powerful tools for pattern matching and text manipulation. They can be complex, but with practice, you'll find them incredibly useful for various tasks in JavaScript.
 
-![Regex meme](img/regex-meme.webp)
+
 
 
 

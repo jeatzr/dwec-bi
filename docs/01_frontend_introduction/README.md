@@ -223,8 +223,6 @@ Examples and instructions on how to use your project.
 
 ```javascript
 console.log('Hello, World!');
-
-\`\`\`
 ```
 
 ### **5.4 Package Managers**
@@ -454,5 +452,6 @@ Bootstrap is a popular open-source front-end framework for developing **responsi
 - **Official Documentation**: [Bootstrap Documentation](https://getbootstrap.com/docs/)
 - **Examples and Templates**: Explore various Bootstrap examples and templates to get started quickly.
 - **B4 Snippets for VSCode**: [B5 Quick Snippets Extension](https://marketplace.visualstudio.com/items?itemName=anbuselvanrocky.bootstrap5-vscode)
+
 
 
