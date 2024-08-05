@@ -8,9 +8,9 @@ nav:
   - U4 - Manipulating the DOM: 04_DOM/README.md
   - U5 - Events and Forms: 05_events_forms/README.md
   - U6 - AJAX: 06_AJAX/README.md
-  - U7 - Local Storage: 07_local_storage/README.md
+  - U7 - Client-Side Storage: 07_local_storage/README.md
 
-theme: 
+theme:
   logo: 01_frontend_introduction/img/JSEvol.png
   name: material
   features:
@@ -23,7 +23,7 @@ theme:
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
-        
+
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -41,8 +41,8 @@ theme:
         name: Switch to automatic mode
 
 extra_css:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
-  - 'css/custom.css'
+  - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  - "css/custom.css"
 
 markdown_extensions:
   - pymdownx.highlight:
