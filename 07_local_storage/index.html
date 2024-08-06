@@ -506,6 +506,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-web-storage-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Web Storage API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Web Storage API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-local-storage-example-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Local Storage Example Uses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-session-storage-example-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Session Storage Example Uses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -624,6 +657,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-web-storage-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Web Storage API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Web Storage API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-local-storage-example-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Local Storage Example Uses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-session-storage-example-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Session Storage Example Uses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +733,8 @@
 <p><strong>IndexedDB</strong>: A NoSQL database that allows for storing large amounts of structured data. Suitable for complex applications that require significant local data storage and offline capabilities.</p>
 </li>
 </ul>
+<p><img alt="Storage Comparison" src="img/comparison-table.png" /></p>
+<p>Image Source:  <a href="https://www.loginradius.com/blog/engineering/guest-post/local-storage-vs-session-storage-vs-cookies/">Local Storage vs. Session Storage vs. Cookies @ LoginRadius</a></p>
 <h2 id="2-cookies">2. <strong>Cookies</strong></h2>
 <ul>
 <li>Small pieces of data stored in the browser and sent to the server with every HTTP request. </li>
@@ -748,6 +816,16 @@
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JohnDoe&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">);</span><span class="w"> </span><span class="c1">// Persistent cookie for 7 days</span>
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JohnDoe&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/user&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Persistent cookie for 7 days with path /user</span>
 </span></code></pre></div>
+<h4 id="inspecting-cookie-values">Inspecting Cookie Values</h4>
+<p>To inspect cookie values in Chrome DevTools, follow these steps:</p>
+<ol>
+<li>Right-click on the webpage and select <code>Inspect</code>.</li>
+<li>Navigate to the <code>Application</code> tab.</li>
+<li>Under the <code>Storage</code> section, select <code>Cookies</code>.</li>
+<li>Choose the appropriate server from the list.</li>
+<li>View the cookies in the main section.</li>
+</ol>
+<p><img alt="Cookies Inspect" src="img/cookie-inspect.png" /></p>
 <h3 id="22-reading-cookies">2.2 <strong>Reading Cookies</strong></h3>
 <p>You can read cookies by accessing <code>document.cookie</code>, which returns a string containing all cookies.</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;; &quot;</span><span class="p">);</span>
@@ -789,11 +867,131 @@
 <p>To delete a cookie, set its expiration date to a past date.</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;&quot;</span><span class="p">;</span>
 </span></code></pre></div>
-<p>We can create a generic function to erase a cookie with a given name:</p>
+<p>We can create a generic function to erase a cookie with a given name. 
+This function uses <code>setCookie</code>function with property <code>days = -1</code>, that is referring to a past date.</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">eraseCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">setCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </span></code></pre></div>
+<h2 id="3-web-storage-api">3. <strong>Web Storage API</strong></h2>
+<p><code>Local storage</code> and <code>session storage</code> are both part of the <code>Web Storage API</code>, providing ways for web applications to store data locally within the user's browser. While they have some similarities, they also have distinct differences:</p>
+<ul>
+<li><strong>localStorage</strong>: Data persists even after the browser is closed. It can be accessed in the read-only property <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"><code>localStorage</code></a>.</li>
+<li><strong>sessionStorage</strong>: Data stored in session storage is cleared when the page session ends. It can be accessed in the read-only property <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage"><code>sessionStorage</code></a>.</li>
+</ul>
+<p>The methods to access <code>localStorage</code> and <code>sessionStorage</code> items are exactly the same:</p>
+<p><strong><code>localStorage</code> Methods</strong></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Set local storage item</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;myCenter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;IES Azarquiel&quot;</span><span class="p">);</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// Get local storage item</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;myCenter&quot;</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">// Delete local storage item</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s2">&quot;myCenter&quot;</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1">// Remove all saved data from localStorage</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</span></code></pre></div>
+<p><strong><code>sessionStorage</code> Methods</strong></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Set session storage item</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;sessionValue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;My Value&quot;</span><span class="p">);</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">// Get session storage item</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionlStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;sessionValue&quot;</span><span class="p">);</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">// Delete session storage item</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s2">&quot;sessionValue&quot;</span><span class="p">);</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">// Remove all saved data from sessionStorage</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="31-local-storage-example-uses">3.1 <strong>Local Storage Example Uses</strong></h3>
+<h4 id="storing-user-preferences">Storing User Preferences</h4>
+<p>A website can remember user settings, such as theme (dark/light mode), language preferences, or font size, without needing a backend database.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Save preference</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">);</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">// Retrieve preference</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">);</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theme</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: dark</span>
+</span></code></pre></div>
+<h4 id="saving-form-data">Saving Form Data:</h4>
+<p>Local storage can be used to save form data temporarily, allowing users to leave the page and come back without losing their progress.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Save form data</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;formData&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;john@example.com&#39;</span><span class="w"> </span><span class="p">}));</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">// Retrieve form data</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;formData&#39;</span><span class="p">));</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: { name: &#39;John&#39;, email: &#39;john@example.com&#39; }</span>
+</span></code></pre></div>
+<h4 id="caching-api-responses">Caching API Responses:</h4>
+<p>For applications that fetch data from APIs, local storage can be used to cache responses and reduce the number of API calls, improving performance and user experience.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Save API response</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;apiResponse&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">responseData</span><span class="p">));</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">// Retrieve API response</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cachedData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;apiResponse&#39;</span><span class="p">));</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cachedData</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: responseData</span>
+</span></code></pre></div>
+<h4 id="maintaining-state-across-page-loads">Maintaining State Across Page Loads:</h4>
+<p>Web applications can maintain user state, such as items in a shopping cart or the last viewed page, across page loads.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// Save state</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">appState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Product A&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Product B&#39;</span><span class="w"> </span><span class="p">}]</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;cartItems&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// Retrieve state</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cartItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;cartItems&#39;</span><span class="p">));</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cartItems</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: [{ id: 1, name: &#39;Product A&#39; }, { id: 2, name: &#39;Product B&#39; }]</span>
+</span></code></pre></div>
+<h3 id="32-session-storage-example-uses">3.2. <strong>Session Storage Example Uses</strong></h3>
+<p><strong>Storing Temporary Data:</strong></p>
+<p>Ideal for data that is only relevant for the duration of the page session, such as a multi-step form process.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">// Save form step data</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;currentStep&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">// Retrieve form step data</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">currentStep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;currentStep&#39;</span><span class="p">);</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">currentStep</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: 2</span>
+</span></code></pre></div>
+<p><strong>Maintaining User State Within a Single Session:</strong></p>
+<p>Useful for keeping track of user interactions on a single-page application (SPA) without impacting other tabs or future sessions.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Save user interaction state</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;isLoggedIn&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">);</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">// Retrieve user interaction state</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;isLoggedIn&#39;</span><span class="p">);</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isLoggedIn</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: true</span>
+</span></code></pre></div>
+<p><strong>Storing Temporary UI State</strong>:</p>
+<p>Can be used to store the UI state temporarily, such as whether a modal was open or closed.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// Save UI state</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;isModalOpen&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">);</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1">// Retrieve UI state</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isModalOpen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;isModalOpen&#39;</span><span class="p">);</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isModalOpen</span><span class="p">);</span><span class="w"> </span><span class="c1">// Outputs: true</span>
+</span></code></pre></div>
+<p><strong>Saving text between refreshes</strong></p>
+<p>The following example autosaves the contents of a text field, and if the browser is refreshed, restores the text field content so that no writing is lost.</p>
+<p><div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Get the text field that we&#39;re going to track</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;field&quot;</span><span class="p">);</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1">// See if we have an autosave value</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1">// (this will only happen if the page is accidentally refreshed)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;autosave&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="c1">// Restore the contents of the text field</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="nx">field</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;autosave&quot;</span><span class="p">);</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">}</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="c1">// Listen for changes in the text field</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nx">field</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="c1">// And save the results into the session storage object</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;autosave&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">field</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">});</span>
+</span></code></pre></div>
+Source of the example: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">mdn web docs_</a></p>
+<p>Another example: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API">Using the Web Storage API</a></p>
 
 
 
