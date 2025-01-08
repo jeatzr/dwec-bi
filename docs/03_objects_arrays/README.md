@@ -326,7 +326,7 @@ Creates a new array with all elements that pass the test implemented by the prov
 const longNamedFruits = allFruits.filter(function(fruit) {
     return fruit.length > 5;
 });
-console.log(longNamedFruits); // Output: ["Blueberry"]
+console.log(longNamedFruits); // Output: ["Banana", "Blueberry"]
 ```
 
 #### 13. `reduce`
@@ -364,8 +364,8 @@ It is used to sort the elements of an array in place and returns the sorted arra
 
 
 <div class="exercise-box">
-  <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Array Manipulation with `map`</h3>
-  <p>Create a web page that calculates the square of each number in an array and displays the results.</p>
+  <h3><i class="fas fa-laptop-code"></i> Hands-On Exercise: Array Manipulation with `map` and `filter`</h3>
+  <p>Create script that calculates the square of each number in an array and displays the results.</p>
   
   <script>
     // Array of numbers
@@ -380,6 +380,8 @@ It is used to sort the elements of an array in place and returns the sorted arra
     document.write("<p>Original Numbers: " + numbers.join(", ") + "</p>");
     document.write("<p>Squares: " + squares.join(", ") + "</p>");
   </script>
+
+  <p>After that, use the function `filter` to take only the elements that are divisible by 3.</p>
 </div>
 
 
@@ -653,5 +655,119 @@ let parsedObject = JSON.parse(jsonUser);
 
 console.log("\nJSON converted back to object:");
 console.log(parsedObject);
+```
+
+## **6. JavaScript Modules: Importing and Exporting**
+
+In JavaScript, modules allow you to break up your code into smaller, reusable pieces. There are two main systems for using modules in JavaScript:
+
+1. **ES Modules**: This is the modern way to handle modules, using the `import` and `export` keywords. It is supported in most browsers and Node.js (since version 12+ with ES module support enabled).
+2. **CommonJS**: This is the older, widely-used module system in Node.js, where you use `require` to import and `module.exports` to export. Most Node.js projects still use this system.
+
+
+
+---
+
+### **6.1 ES Modules: Using `import` and `export`**
+
+In ES Modules, you can export parts of your code (like functions, objects, classes) so they can be used in other files.
+
+To use ES Modules in the browser, you simply need to add the `type="module"` attribute to your `<script>` tag, like this:
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Modules in Browser</title>
+</head>
+<body>
+    <script type="module">
+        import { greet } from './greeting.js';
+        greet('World');
+    </script>
+</body>
+</html>
+```
+
+#### **1. Exporting from a Module**
+
+In ES Modules, you can export parts of your code (like functions, objects, classes) so they can be used in other files.
+
+##### **Named Export**
+With **named exports**, you can export multiple items from a module. They must be imported by the exact names in other files.
+
+```js
+// mathUtils.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+```
+
+In this case, `greeting.js` would be a separate file:
+
+```js
+// greeting.js
+export function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+```
+
+##### **Default Export**
+
+With a default export, you can export a single item from a file. There can only be one default export per file.
+
+```js
+// calculator.js
+export default function multiply(a, b) {
+  return a * b;
+}
+```
+
+#### **2. Importing a Module**
+
+To use the exports from another file, you use the `import` keyword.
+
+##### **Importing Named Exports**
+
+When importing named exports, you have to match the exact names of the exports.
+
+```js
+// app.js
+import { add, subtract } from './mathUtils.js';
+
+console.log(add(3, 2)); // 5
+console.log(subtract(5, 1)); // 4
+```
+
+##### **Importing a Default Export**
+
+When importing a default export, you can give it any name you want.
+
+```js
+// app.js
+import multiply from './calculator.js';
+
+console.log(multiply(3, 4)); // 12
+
+```
+
+
+##### **Importing all Exports**
+
+You can also import everything from a module into a single object using the `*` as syntax.
+
+```js
+// app.js
+import * as mathUtils from './mathUtils.js';
+
+console.log(mathUtils.add(2, 3)); // 5
+console.log(mathUtils.subtract(7, 2)); // 5
 ```
 

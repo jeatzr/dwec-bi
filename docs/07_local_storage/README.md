@@ -250,6 +250,10 @@ localStorage.setItem('theme', 'dark');
 const theme = localStorage.getItem('theme');
 console.log(theme); // Outputs: dark
 ```
+
+**Check this!** -> [How to manage Dark Mode in CSS](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+
+
 #### Saving Form Data:
 
 Local storage can be used to save form data temporarily, allowing users to leave the page and come back without losing their progress.
