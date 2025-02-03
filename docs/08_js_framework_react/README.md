@@ -97,3 +97,16 @@
   const greet = (name = "Guest") => `Hello, ${name}!`;
   console.log(greet()); // Output: Hello, Guest!
   ```
+
+## **APENDIX**
+
+### **APENDIX A: React**
+
+- [Learn React from react.dev](https://react.dev/learn)
+- [Vite Guide](https://vite.dev/guide/)
+
+### APENDIX B: Typescript
+
+- [APPENDIX B Learning TypeScript for React](TYPESCRIPT.md)
+- [typescript.org](https://www.typescriptlang.org/)
+- [Using Typescipt in React](https://react.dev/learn/typescript)

@@ -9,6 +9,7 @@ nav:
   - U5 - Events and Forms: 05_events_forms/README.md
   - U6 - AJAX: 06_AJAX/README.md
   - U7 - Client-Side Storage: 07_local_storage/README.md
+  - U8 - JS Framework, React: 08_js_framework_react/README.md
 
 theme:
   logo: 01_frontend_introduction/img/JSEvol.png
