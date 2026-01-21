@@ -129,13 +129,13 @@ interface Admin extends User {
 ```typescript
 import React from "react";
 
-type Props = {
+interface HeaderProps {
   title: string;
-};
+}
 
-const Header: React.FC<Props> = ({ title }) => {
+function Header({ title }: HeaderProps) {
   return <h1>{title}</h1>;
-};
+}
 
 export default Header;
 ```

@@ -104,6 +104,7 @@
 
 - [Learn React from react.dev](https://react.dev/learn)
 - [Vite Guide](https://vite.dev/guide/)
+- [useEffect guide](USEEFFECT.md)
 
 ### APENDIX B: Typescript
 
